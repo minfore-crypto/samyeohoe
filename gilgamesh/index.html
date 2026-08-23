@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>길가메쉬 서사시 인물 계보</title>
+<meta name="description" content="김산해 옮김 통합본 기준 — 신들의 계보, 길가메쉬 가계, 인물 관계 지도, 신들의 등장 장면 정리. 삼여회 독서모임 자료.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="길가메쉬 서사시 인물 계보">
+<meta property="og:description" content="신들의 계보 · 길가메쉬 가계 · 인물 관계 지도 · 신들은 언제 등장하는가. 삼여회 독서모임 자료.">
+<meta property="og:url" content="https://minfore-crypto.github.io/samyeohoe/gilgamesh/">
+<meta property="og:image" content="https://minfore-crypto.github.io/samyeohoe/gilgamesh/gilgamesh-maps/map1-fertile-crescent.jpg">
+<meta property="og:site_name" content="삼여회 독서모임">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root{
+  --bg:#f6f3ec;
+  --panel:#fffdf8;
+  --ink:#2b2620;
+  --ink-soft:#6b6055;
+  --line:#c9bda9;
+  --accent:#8c5a2b;
+  --accent-soft:#e8dcc6;
+  --god:#7a5c9e;
+  --god-bg:#efe8f7;
+  --hero:#8c5a2b;
+  --hero-bg:#f4e6d4;
+  --foe:#a33b32;
+  --foe-bg:#f8e2df;
+  --edge:#ded3c0;
+  --sun:#b07a1f;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1b1815;
+    --panel:#242019;
+    --ink:#ece5d8;
+    --ink-soft:#a89880;
+    --line:#544a3c;
+    --accent:#d9a35e;
+    --accent-soft:#3a3125;
+    --god:#c0a3e0;
+    --god-bg:#2e2739;
+    --hero:#d9a35e;
+    --hero-bg:#3a2f21;
+    --foe:#e0837a;
+    --foe-bg:#3b2523;
+    --edge:#40382d;
+    --sun:#dfae4e;
+  }
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:"Apple SD Gothic Neo","Pretendard","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 24px 80px;}
+header{text-align:center;margin-bottom:12px;}
+h1{
+  font-family:"Apple SD Gothic Neo","Nanum Myeongjo","Batang",serif;
+  font-size:clamp(28px,4.5vw,42px);
+  letter-spacing:-.02em;
+  margin:0 0 8px;
+  font-weight:700;
+}
+.sub{color:var(--ink-soft);font-size:15px;margin:0;}
+.rule{height:1px;background:var(--line);margin:36px 0 8px;opacity:.6;}
+
+h2{
+  font-family:"Apple SD Gothic Neo","Nanum Myeongjo","Batang",serif;
+  font-size:22px;margin:48px 0 6px;letter-spacing:-.01em;
+  display:flex;align-items:center;gap:12px;
+}
+h2 .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:28px;height:28px;border-radius:50%;
+  background:var(--accent);color:var(--panel);
+  font-size:14px;font-weight:700;flex:none;
+}
+.lede{color:var(--ink-soft);font-size:14.5px;margin:0 0 24px;padding-left:40px;}
+
+/* ---------- tree ---------- */
+.scroller{overflow-x:auto;padding:8px 0 16px;}
+.tree{min-width:640px;}
+.tree ul{
+  position:relative;padding:26px 0 0;margin:0;
+  display:flex;justify-content:center;
+}
+.tree li{
+  list-style:none;position:relative;
+  padding:26px 10px 0;text-align:center;
+}
+.tree li::before,.tree li::after{
+  content:'';position:absolute;top:0;right:50%;
+  border-top:1.5px solid var(--line);width:50%;height:26px;
+}
+.tree li::after{right:auto;left:50%;border-left:1.5px solid var(--line);}
+.tree li:only-child::after,.tree li:only-child::before{display:none;}
+.tree li:only-child{padding-top:0;}
+.tree li:first-child::before,.tree li:last-child::after{border:0 none;}
+.tree li:last-child::before{border-right:1.5px solid var(--line);border-radius:0 6px 0 0;}
+.tree li:first-child::after{border-radius:6px 0 0 0;}
+.tree ul ul::before{
+  content:'';position:absolute;top:0;left:50%;
+  border-left:1.5px solid var(--line);width:0;height:26px;
+}
+.tree>ul{padding-top:0;}
+
+.node{
+  display:inline-block;text-decoration:none;color:inherit;
+  border:1px solid var(--edge);background:var(--panel);
+  border-radius:10px;padding:9px 14px;min-width:118px;
+  box-shadow:0 1px 2px rgba(0,0,0,.04);
+}
+.node .nm{display:block;font-weight:700;font-size:15px;letter-spacing:-.01em;}
+.node .orig{display:block;font-size:11px;color:var(--ink-soft);letter-spacing:.02em;margin-top:1px;}
+.node .rl{display:block;font-size:12px;color:var(--ink-soft);margin-top:4px;line-height:1.45;}
+.node.god{background:var(--god-bg);border-color:var(--god);}
+.node.god .nm{color:var(--god);}
+.node.hero{background:var(--hero-bg);border-color:var(--hero);}
+.node.hero .nm{color:var(--hero);}
+.node.foe{background:var(--foe-bg);border-color:var(--foe);}
+.node.foe .nm{color:var(--foe);}
+.node.big{padding:12px 18px;min-width:150px;}
+.node.big .nm{font-size:18px;}
+.node.dim{opacity:.72;}
+
+.note{
+  font-size:12.5px;color:var(--ink-soft);
+  border-left:2px solid var(--accent-soft);
+  padding:2px 0 2px 12px;margin:14px 0 0 40px;
+}
+
+/* ---------- cards ---------- */
+.grid{
+  display:grid;gap:14px;
+  grid-template-columns:repeat(auto-fill,minmax(228px,1fr));
+  margin-top:6px;
+}
+.card{
+  background:var(--panel);border:1px solid var(--edge);
+  border-radius:12px;padding:14px 16px;
+}
+.card .cn{font-weight:700;font-size:16px;letter-spacing:-.01em;margin:0 0 1px;}
+.card .co{font-size:11.5px;color:var(--ink-soft);letter-spacing:.02em;margin:0 0 7px;}
+.card p{margin:0;font-size:13.5px;color:var(--ink-soft);line-height:1.6;}
+.card .ch{
+  display:inline-block;margin-top:9px;font-size:11px;font-weight:600;
+  color:var(--accent);background:var(--accent-soft);
+  border-radius:20px;padding:2px 9px;
+}
+.card.k-god{border-left:3px solid var(--god);}
+.card.k-hero{border-left:3px solid var(--hero);}
+.card.k-foe{border-left:3px solid var(--foe);}
+.card.k-edge{border-left:3px solid var(--sun);}
+
+.group-label{
+  font-size:13px;font-weight:700;color:var(--ink-soft);
+  letter-spacing:.06em;margin:30px 0 10px;
+  display:flex;align-items:center;gap:10px;
+}
+.group-label::after{content:'';flex:1;height:1px;background:var(--edge);}
+
+/* ---------- chain ---------- */
+.chain{
+  display:flex;flex-wrap:wrap;align-items:stretch;gap:8px;margin-top:6px;
+}
+.step{
+  flex:1 1 150px;background:var(--panel);border:1px solid var(--edge);
+  border-radius:10px;padding:11px 13px;position:relative;
+}
+.step .sh{font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.04em;}
+.step .st{font-size:14px;font-weight:600;margin-top:3px;}
+.step .sd{font-size:12.5px;color:var(--ink-soft);margin-top:4px;line-height:1.55;}
+.arrow{
+  align-self:center;color:var(--line);font-size:18px;flex:none;
+}
+@media (max-width:700px){ .arrow{display:none;} }
+
+.legend{
+  display:flex;flex-wrap:wrap;gap:16px;justify-content:center;
+  margin-top:22px;font-size:12.5px;color:var(--ink-soft);
+}
+.legend span{display:inline-flex;align-items:center;gap:6px;}
+.dot{width:10px;height:10px;border-radius:3px;display:inline-block;}
+
+/* ---------- maps ---------- */
+.maps{display:grid;gap:20px;margin-top:6px;}
+.maps figure{margin:0;background:var(--panel);border:1px solid var(--edge);border-radius:12px;padding:12px;}
+.maps img{width:100%;height:auto;display:block;border-radius:8px;}
+.maps figcaption{
+  font-size:13px;color:var(--ink-soft);line-height:1.65;
+  margin-top:10px;padding:0 4px 2px;
+}
+.maps figcaption strong{color:var(--ink);}
+@media (min-width:820px){
+  .maps{grid-template-columns:1fr 1fr;}
+  .maps figure:first-child{grid-column:1 / -1;}
+}
+
+/* ---------- interactive god panel ---------- */
+.node[data-god]{cursor:pointer;transition:transform .12s ease,box-shadow .12s ease;}
+.node[data-god]:hover{transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.10);}
+.node[data-god].on{outline:2px solid var(--god);outline-offset:2px;}
+.hint{
+  text-align:center;font-size:12.5px;color:var(--ink-soft);
+  margin:4px 0 0;
+}
+.hint::before{content:'▾ ';}
+.godpanel{
+  margin-top:18px;background:var(--panel);
+  border:1px solid var(--god);border-radius:12px;padding:18px 20px;
+}
+.godpanel h3{
+  margin:0 0 2px;font-size:19px;color:var(--god);letter-spacing:-.01em;
+}
+.godpanel .gp-orig{font-size:12px;color:var(--ink-soft);margin:0 0 4px;letter-spacing:.02em;}
+.godpanel .gp-role{font-size:13.5px;color:var(--ink);margin:0 0 14px;}
+.godpanel ol{margin:0;padding-left:0;list-style:none;}
+.godpanel li{
+  display:flex;gap:12px;padding:7px 0;
+  border-top:1px solid var(--edge);font-size:13.5px;
+}
+.godpanel li:first-child{border-top:0;}
+.godpanel .gp-ch{
+  flex:none;width:56px;font-weight:700;color:var(--accent);font-size:12.5px;padding-top:1px;
+}
+.godpanel .gp-tx{color:var(--ink-soft);line-height:1.6;}
+.godpanel .gp-tx strong{color:var(--ink);}
+.gp-close{
+  float:right;border:0;background:transparent;color:var(--ink-soft);
+  font-size:18px;cursor:pointer;line-height:1;padding:0 2px;
+}
+
+/* ---------- table ---------- */
+.phase{margin-top:26px;}
+.phase-h{
+  font-size:13px;font-weight:700;letter-spacing:.04em;
+  color:var(--accent);margin:0 0 8px;
+}
+table{
+  width:100%;border-collapse:collapse;background:var(--panel);
+  border:1px solid var(--edge);border-radius:10px;overflow:hidden;
+  font-size:13.5px;
+}
+th,td{padding:9px 12px;text-align:left;vertical-align:top;border-top:1px solid var(--edge);}
+tr:first-child th,tr:first-child td{border-top:0;}
+th{background:var(--accent-soft);font-size:12px;letter-spacing:.03em;color:var(--ink-soft);font-weight:700;}
+td.c-ch{width:52px;font-weight:700;color:var(--accent);white-space:nowrap;}
+td.c-god{width:132px;font-weight:600;color:var(--god);}
+td.c-do{color:var(--ink-soft);line-height:1.6;}
+td.c-do strong{color:var(--ink);}
+
+.insight{
+  background:var(--accent-soft);border-radius:12px;
+  padding:18px 22px;margin-top:28px;
+}
+.insight h4{margin:0 0 10px;font-size:15px;letter-spacing:-.01em;}
+.insight ul{margin:0;padding-left:18px;}
+.insight li{font-size:13.5px;color:var(--ink-soft);margin-bottom:7px;line-height:1.65;}
+.insight li strong{color:var(--ink);}
+
+footer{
+  margin-top:56px;padding-top:20px;border-top:1px solid var(--edge);
+  font-size:12.5px;color:var(--ink-soft);text-align:center;line-height:1.8;
+}
+@media print{
+  body{background:#fff;}
+  .card,.node,.step{box-shadow:none;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>길가메쉬 서사시 인물 계보</h1>
+  <p class="sub">김산해 옮김 · 수메르어 · 악카드어 원전 통합본 기준</p>
+  <div class="legend">
+    <span><i class="dot" style="background:var(--god)"></i>신</span>
+    <span><i class="dot" style="background:var(--hero)"></i>영웅 · 인간</span>
+    <span><i class="dot" style="background:var(--foe)"></i>적대자</span>
+    <span><i class="dot" style="background:var(--sun)"></i>세상 끝의 존재</span>
+  </div>
+</header>
+
+<div class="rule"></div>
+
+<!-- ========== 0. 지도 ========== -->
+<h2><span class="num" style="background:var(--sun)">○</span>이야기의 무대</h2>
+<p class="lede">책에 지도가 없어 아쉬웠던 부분입니다. 북쪽 산지에서 페르시아만까지 이어지는 비옥한 초승달 지대, 그 남쪽 끝에 수메르 도시국가들이 모여 있습니다.</p>
+
+<div class="maps">
+  <figure>
+    <img src="gilgamesh-maps/map1-fertile-crescent.jpg" alt="비옥한 초승달 지대 전도">
+    <figcaption><strong>비옥한 초승달 지대 전체</strong> — 지중해 연안에서 티그리스·유프라테스를 따라 페르시아만까지. 북쪽에 아시리아, 가운데에 악카드, 남쪽 끝에 수메르(우루크·우르·라가쉬·에리두)가 놓입니다. 서쪽 타우루스산맥과 동쪽 자그로스산맥 사이의 충적평야여서 석재가 나지 않습니다.</figcaption>
+  </figure>
+  <figure>
+    <img src="gilgamesh-maps/map2-crescent-cities.jpg" alt="초승달 지대와 주요 도시">
+    <figcaption><strong>초승달의 형태와 주요 도시</strong> — 노란색으로 표시된 남쪽 끝이 수메르 본향입니다. 바빌론과 키쉬가 그 위 북쪽 길목에 자리하는데, <strong>키쉬</strong>는 남북과 레반트를 잇는 무역 요충이었습니다. 13장 「길가메쉬와 아가의 전쟁」의 아가가 이 키쉬의 왕입니다.</figcaption>
+  </figure>
+  <figure>
+    <img src="gilgamesh-maps/map3-city-states.jpg" alt="초기 메소포타미아 도시국가">
+    <figcaption><strong>초기 도시국가 확대도</strong> — 서사시의 실제 무대입니다. <strong>우루크</strong>(길가메쉬의 도시, 안과 이난나), <strong>니푸르</strong>(엔릴의 도시이자 종교적 중심), <strong>우르</strong>(달의 신 난나), <strong>슈루팍</strong>(우트나피쉬팀의 도시, 홍수 이야기의 무대), <strong>키쉬</strong>가 모두 좁은 범위 안에 모여 있습니다.</figcaption>
+  </figure>
+</div>
+
+<p class="note">자료 제공: 신운화 회원 (23차 모임). 세 장을 겹쳐 보면 전체 → 초승달 → 도시국가 순으로 초점이 좁혀집니다. 에리두는 첫 번째 지도 남쪽 끝에서 확인할 수 있습니다.</p>
+
+<!-- ========== 1. 신들의 계보 ========== -->
+<h2><span class="num">1</span>신들의 계보</h2>
+<p class="lede">메소포타미아 만신전의 뼈대입니다. 하늘신 안에서 시작해 실권자 엔릴, 인간 편에 서는 엔키로 갈라집니다.</p>
+
+<div class="scroller">
+<div class="tree">
+  <ul>
+    <li>
+      <span class="node god big" data-god="안">
+        <span class="nm">안</span>
+        <span class="orig">An / Anu</span>
+        <span class="rl">하늘의 신, 최고신<br>우루크의 수호신</span>
+      </span>
+      <ul>
+        <li>
+          <span class="node god" data-god="엔릴">
+            <span class="nm">엔릴</span>
+            <span class="orig">Enlil</span>
+            <span class="rl">대기 · 바람<br>실질적 최고 권력</span>
+          </span>
+          <ul>
+            <li>
+              <span class="node god" data-god="난나">
+                <span class="nm">난나</span>
+                <span class="orig">Nanna / Sin</span>
+                <span class="rl">달의 신</span>
+              </span>
+              <ul>
+                <li><span class="node god" data-god="우투">
+                  <span class="nm">우투</span>
+                  <span class="orig">Utu / Shamash</span>
+                  <span class="rl">태양 · 정의<br>길가메쉬의 후원자</span>
+                </span></li>
+                <li><span class="node god" data-god="이쉬타르">
+                  <span class="nm">이쉬타르</span>
+                  <span class="orig">Ishtar / Inanna</span>
+                  <span class="rl">사랑 · 전쟁<br>청혼과 복수</span>
+                </span></li>
+              </ul>
+            </li>
+            <li><span class="node god dim" data-god="니누르타">
+              <span class="nm">니누르타</span>
+              <span class="orig">Ninurta</span>
+              <span class="rl">전쟁 · 농경</span>
+            </span></li>
+          </ul>
+        </li>
+        <li>
+          <span class="node god" data-god="엔키">
+            <span class="nm">엔키</span>
+            <span class="orig">Enki / Ea</span>
+            <span class="rl">지혜 · 담수(압주)<br>인간을 살리는 쪽</span>
+          </span>
+        </li>
+        <li>
+          <span class="node god" data-god="아루루">
+            <span class="nm">아루루</span>
+            <span class="orig">Aruru / Belet-ili</span>
+            <span class="rl">모신(母神)<br>엔키두를 빚음</span>
+          </span>
+        </li>
+        <li>
+          <span class="node god" data-god="에레쉬키갈">
+            <span class="nm">에레쉬키갈</span>
+            <span class="orig">Ereshkigal</span>
+            <span class="rl">저승의 여왕<br>이쉬타르의 언니</span>
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+
+<p class="hint">신 이름을 누르면 그 신이 서사시 어디에 등장하는지 아래에 펼쳐집니다.</p>
+<div id="godpanel" class="godpanel" hidden></div>
+
+<p class="note">계보는 판본마다 다릅니다. 특히 <strong>이쉬타르</strong>는 안의 딸로 나오는 전승과 난나의 딸(우투의 쌍둥이 누이)로 나오는 전승이 함께 있습니다. 위 그림은 후자를 따랐습니다. <strong>아루루</strong>는 닌후르쌍 · 마미 등 여러 이름으로 불리는 대모신으로, 계보상 안의 배우자 혹은 누이로도 나옵니다.</p>
+
+<!-- ========== 2. 길가메쉬 가계 ========== -->
+<h2><span class="num">2</span>길가메쉬의 가계</h2>
+<p class="lede">신과 인간의 경계에 걸친 혈통입니다. "3분의 2는 신, 3분의 1은 인간"이라는 그 유명한 비율이 여기서 나옵니다.</p>
+
+<div class="scroller">
+<div class="tree">
+  <ul>
+    <li>
+      <span class="node hero" style="background:transparent;border-style:dashed;">
+        <span class="nm" style="font-size:14px;">우루크 제1왕조</span>
+        <span class="rl">수메르 왕명부</span>
+      </span>
+      <ul>
+        <li>
+          <span class="node hero">
+            <span class="nm">루갈반다</span>
+            <span class="orig">Lugalbanda</span>
+            <span class="rl">아버지 · 우루크의 왕<br>훗날 신으로 모셔짐</span>
+          </span>
+          <ul>
+            <li>
+              <span class="node hero big">
+                <span class="nm">길가메쉬</span>
+                <span class="orig">Gilgamesh / Bilgames</span>
+                <span class="rl">우루크의 왕<br>3분의 2는 신, 3분의 1은 인간</span>
+              </span>
+              <ul>
+                <li><span class="node hero dim">
+                  <span class="nm">우르눙갈</span>
+                  <span class="orig">Ur-Nungal</span>
+                  <span class="rl">아들 · 왕위를 이음<br>(왕명부에만 등장)</span>
+                </span></li>
+                <li><span class="node hero">
+                  <span class="nm">엔키두</span>
+                  <span class="orig">Enkidu</span>
+                  <span class="rl">아루루가 진흙으로 빚음<br>닌순이 양자로 삼아 형제가 됨</span>
+                </span></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <span class="node god" data-god="닌순">
+            <span class="nm">닌순</span>
+            <span class="orig">Ninsun</span>
+            <span class="rl">어머니 · 여신<br>"지혜로운 들소 여인"</span>
+          </span>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+
+<p class="note">엔키두는 혈연이 아니라 <strong>입양</strong>으로 가족이 됩니다. 7장 「닌순의 기도」에서 닌순이 엔키두의 목에 부적을 걸어주며 아들로 받아들이죠. 태생이 다른 둘을 서사가 굳이 형제로 묶는 장치입니다.</p>
+
+<!-- ========== 3. 관계 지도 ========== -->
+<h2><span class="num">3</span>인물 관계 지도</h2>
+<p class="lede">여정의 단계별로 등장 인물을 묶었습니다. 각 카드의 태그는 김산해 판 기준 장 번호입니다.</p>
+
+<div class="group-label">우루크 — 이야기가 시작되는 곳</div>
+<div class="grid">
+  <div class="card k-hero">
+    <p class="cn">샴하트</p><p class="co">Shamhat</p>
+    <p>이쉬타르 신전의 여사제. 이레 동안 엔키두와 함께하며 그를 짐승에서 인간으로 건너오게 한다. 문명화의 통로.</p>
+    <span class="ch">3장 엔키두의 개화</span>
+  </div>
+  <div class="card k-hero">
+    <p class="cn">사냥꾼</p><p class="co">초원의 사냥꾼</p>
+    <p>덫이 계속 망가지는 것을 보고 엔키두를 발견해 길가메쉬에게 알린다. 아버지의 조언에 따라 샴하트를 데려온다.</p>
+    <span class="ch">2~3장</span>
+  </div>
+  <div class="card k-hero">
+    <p class="cn">우루크의 원로들</p><p class="co">장로회</p>
+    <p>삼목산 원정을 강하게 만류한다. 길가메쉬가 무시하는 첫 번째 목소리.</p>
+    <span class="ch">6장 훔바바 살해 음모</span>
+  </div>
+  <div class="card k-god">
+    <p class="cn">닌순</p><p class="co">Ninsun</p>
+    <p>어머니 여신. 태양신 샤마쉬에게 아들을 지켜달라 기도하고, 엔키두를 아들로 입양한다.</p>
+    <span class="ch">7장 닌순의 기도</span>
+  </div>
+</div>
+
+<div class="group-label">원정과 충돌 — 명성으로 죽음을 이기려는 시도</div>
+<div class="grid">
+  <div class="card k-foe">
+    <p class="cn">훔바바 · 후와와</p><p class="co">Humbaba(악카드) / Huwawa(수메르)</p>
+    <p>삼목산의 수호자. <strong>같은 존재의 두 언어 이름</strong>이다. 엔릴이 임명한 자여서 살해는 곧 신성모독. 목숨을 구걸하지만 엔키두가 죽이라 밀어붙인다.</p>
+    <span class="ch">9장 · 10장</span>
+  </div>
+  <div class="card k-god">
+    <p class="cn">이쉬타르</p><p class="co">Ishtar / Inanna</p>
+    <p>길가메쉬에게 청혼했다가 모욕적으로 거절당한다. 안에게 하늘의 황소를 청해 복수한다.</p>
+    <span class="ch">11장 이쉬타르의 청혼</span>
+  </div>
+  <div class="card k-foe">
+    <p class="cn">하늘의 황소</p><p class="co">Gugalanna</p>
+    <p>이쉬타르가 내려보낸 재앙. 우루크에 가뭄과 죽음을 몰고 온다. 둘이 죽인 뒤 넓적다리를 여신에게 집어던진다.</p>
+    <span class="ch">12장</span>
+  </div>
+  <div class="card k-foe">
+    <p class="cn">아가</p><p class="co">Agga</p>
+    <p>키쉬의 왕, 엔메바라게시의 아들. 우루크를 포위한다. <strong>표준판에 없는 수메르 독립 설화</strong>에서 온 인물.</p>
+    <span class="ch">13장</span>
+  </div>
+</div>
+
+<div class="group-label">세상 끝으로 — 불멸을 찾는 여정</div>
+<div class="grid">
+  <div class="card k-edge">
+    <p class="cn">전갈 인간 부부</p><p class="co">마슈 산의 문지기</p>
+    <p>해가 드나드는 쌍둥이 산의 문을 지킨다. 인간은 갈 수 없다고 막지만 길가메쉬는 밀고 통과한다.</p>
+    <span class="ch">17장</span>
+  </div>
+  <div class="card k-edge">
+    <p class="cn">씨두리</p><p class="co">Siduri</p>
+    <p>세상 끝 바닷가 술집의 여주인. 서사시에서 가장 많이 인용되는 충고를 남긴다 — <em>배를 채우고, 옷을 빨고, 아이의 손을 잡으라.</em></p>
+    <span class="ch">18장 씨두리의 충고</span>
+  </div>
+  <div class="card k-edge">
+    <p class="cn">우르샤나비</p><p class="co">Urshanabi</p>
+    <p>죽음의 물을 건너는 뱃사공. 길가메쉬가 그의 <strong>돌 인간들</strong>을 부숴버려 스스로 건널 수단을 없앤다. 마지막 장면에서 우루크로 함께 돌아온다.</p>
+    <span class="ch">19장</span>
+  </div>
+  <div class="card k-edge">
+    <p class="cn">우트나피쉬팀</p><p class="co">Utnapishtim / 지우수드라 · 아트라하시스</p>
+    <p>홍수의 생존자. 신들에게 불멸을 받은 유일한 인간. 이레 동안 깨어 있으라는 시험을 내고, 길가메쉬는 곧바로 잠든다.</p>
+    <span class="ch">20~21장</span>
+  </div>
+  <div class="card k-edge">
+    <p class="cn">우트나피쉬팀의 아내</p><p class="co">이름 없음</p>
+    <p>빈손으로 돌려보내지 말라고 남편을 설득한다. 불로초의 존재를 알려주는 계기.</p>
+    <span class="ch">22장</span>
+  </div>
+  <div class="card k-foe">
+    <p class="cn">뱀</p><p class="co">—</p>
+    <p>길가메쉬가 목욕하는 사이 불로초를 물고 달아난다. <strong>싸움조차 허락되지 않는 마지막 상대.</strong> 뱀이 허물을 벗는 이유의 기원담.</p>
+    <span class="ch">22장 왕의 귀환</span>
+  </div>
+</div>
+
+<div class="group-label">저승 — 돌아올 수 없는 땅</div>
+<div class="grid">
+  <div class="card k-god">
+    <p class="cn">에레쉬키갈</p><p class="co">Ereshkigal</p>
+    <p>저승의 여왕. 이쉬타르의 언니. 한번 들어온 자를 놓아주지 않는다.</p>
+    <span class="ch">16장</span>
+  </div>
+  <div class="card k-god">
+    <p class="cn">아눈나키</p><p class="co">Anunnaki</p>
+    <p>저승의 신들 · 심판관 무리. 아들 일곱을 남긴 자가 그 사이에 앉는다.</p>
+    <span class="ch">16장</span>
+  </div>
+  <div class="card k-hero">
+    <p class="cn">엔키두의 혼령</p><p class="co">—</p>
+    <p>저승의 금기를 모두 어겨 붙잡힌다. 열린 구멍으로 바람처럼 올라와 죽은 자들의 처지를 낱낱이 전한다.</p>
+    <span class="ch">16장 저승 여행</span>
+  </div>
+</div>
+
+<!-- ========== 4. 죽음의 연쇄 ========== -->
+<h2><span class="num">4</span>죽음의 연쇄</h2>
+<p class="lede">인물들이 어떻게 맞물려 결말로 굴러가는지, 인과만 뽑았습니다.</p>
+
+<div class="chain">
+  <div class="step">
+    <div class="sh">발단</div>
+    <div class="st">폭군과 짝패</div>
+    <div class="sd">아루루가 엔키두를 빚는다. 싸움 끝에 우정.</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="sh">첫 번째 도전</div>
+    <div class="st">훔바바 살해</div>
+    <div class="sd">엔릴이 세운 수호자를 죽인다. 구걸을 거절한다.</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="sh">두 번째 도전</div>
+    <div class="st">하늘의 황소 살해</div>
+    <div class="sd">이쉬타르를 모욕하고 그 복수마저 꺾는다.</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="sh">판결</div>
+    <div class="st">둘 중 하나는 죽는다</div>
+    <div class="sd">신들의 회의. 엔키두가 지목된다.</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="sh">붕괴</div>
+    <div class="st">엔키두의 죽음</div>
+    <div class="sd">전투가 아니라 병으로, 침대에서.</div>
+  </div>
+  <div class="arrow">→</div>
+  <div class="step">
+    <div class="sh">결말</div>
+    <div class="st">빈손의 귀환</div>
+    <div class="sd">불로초를 잃고 성벽을 가리키며 끝난다.</div>
+  </div>
+</div>
+
+<!-- ========== 5. 신들의 등장 지도 ========== -->
+<h2><span class="num">5</span>신들은 언제 등장하는가</h2>
+<p class="lede">계보만으로는 보이지 않던 역할 분담이 여기서 드러납니다. 장 번호는 김산해 판 기준입니다.</p>
+
+<div class="phase">
+  <p class="phase-h">1~5장 · 발단</p>
+  <table>
+    <tr><th>장</th><th>신</th><th>하는 일</th></tr>
+    <tr><td class="c-ch">1</td><td class="c-god">안</td><td class="c-do">우루크는 안과 이쉬타르의 도시(에안나 신전). 폭정에 시달린 백성의 탄원이 안에게 올라간다</td></tr>
+    <tr><td class="c-ch">2</td><td class="c-god">아루루</td><td class="c-do">안의 명령으로 손을 씻고 진흙을 떼어 초원에 던져 <strong>엔키두를 빚는다</strong></td></tr>
+    <tr><td class="c-ch">3</td><td class="c-god">이쉬타르</td><td class="c-do">직접 등장은 없으나 샴하트가 그녀의 신전 사제다 — 간접 개입</td></tr>
+    <tr><td class="c-ch">4</td><td class="c-god">닌순</td><td class="c-do">아들의 꿈을 해몽한다. 하늘에서 떨어진 별과 도끼가 곧 찾아올 벗이라고</td></tr>
+  </table>
+</div>
+
+<div class="phase">
+  <p class="phase-h">6~10장 · 삼목산 원정</p>
+  <table>
+    <tr><th>장</th><th>신</th><th>하는 일</th></tr>
+    <tr><td class="c-ch">6</td><td class="c-god">엔릴</td><td class="c-do">훔바바를 삼목산 수호자로 임명한 자로 언급된다. <strong>살해가 곧 신성모독이 되는 근거</strong></td></tr>
+    <tr><td class="c-ch">7</td><td class="c-god">닌순 · 샤마쉬</td><td class="c-do">닌순이 지붕에 올라 향을 피우고 샤마쉬에게 기도한다. <strong>샤마쉬의 아내 아야에게 "남편을 일깨워달라" 청하는 대목</strong>이 여기. 이어 엔키두를 아들로 입양한다</td></tr>
+    <tr><td class="c-ch">8</td><td class="c-god">샤마쉬</td><td class="c-do">산행 중 길가메쉬가 밀가루를 뿌리고 청한 꿈을 계속 보내준다</td></tr>
+    <tr><td class="c-ch">9</td><td class="c-god">샤마쉬</td><td class="c-do"><strong>열세 바람을 보내 훔바바를 붙들어 움직이지 못하게 한다.</strong> 이 원정의 승리는 사실상 샤마쉬가 만든 것</td></tr>
+    <tr><td class="c-ch">10</td><td class="c-god">엔릴</td><td class="c-do">분노한다. 훔바바의 일곱 광휘를 거두어 강 · 사자 · 갈대 등 자연에 나눠준다</td></tr>
+  </table>
+</div>
+
+<div class="phase">
+  <p class="phase-h">11~13장 · 신에 대한 도전</p>
+  <table>
+    <tr><th>장</th><th>신</th><th>하는 일</th></tr>
+    <tr><td class="c-ch">11</td><td class="c-god">이쉬타르</td><td class="c-do">청혼했다가 거절당한다. 옛 연인 목록이 낭독된다 — 두무지, 얼룩날개새, 사자, 말, 목자, 그리고 아버지의 정원사 이슐라누</td></tr>
+    <tr><td class="c-ch">12</td><td class="c-god">안 · 이쉬타르</td><td class="c-do">이쉬타르가 아버지 안에게 하늘의 황소를 요구한다. 안이 거절하자 <strong>"저승의 문을 부수고 죽은 자를 올려보내겠다"고 협박해 관철한다</strong></td></tr>
+    <tr><td class="c-ch">13</td><td class="c-god">이난나 · 우투</td><td class="c-do">수메르 설화라 이름이 수메르식이다. 길가메쉬는 이난나의 총애를 받는 왕으로 나온다</td></tr>
+  </table>
+</div>
+
+<div class="phase">
+  <p class="phase-h">14~17장 · 판결과 죽음</p>
+  <table>
+    <tr><th>장</th><th>신</th><th>하는 일</th></tr>
+    <tr><td class="c-ch">14</td><td class="c-god">아누 · 엔릴 · 에아 · 샤마쉬</td><td class="c-do"><strong>신들의 회의.</strong> 엔릴이 엔키두를 지목하고, 샤마쉬가 변호하다 면박당한다</td></tr>
+    <tr><td class="c-ch">14</td><td class="c-god">에레쉬키갈</td><td class="c-do">엔키두의 꿈에 저승이 펼쳐진다. 여왕 에레쉬키갈과 그 서기 벨레트-체리가 등장</td></tr>
+    <tr><td class="c-ch">14</td><td class="c-god">샤마쉬</td><td class="c-do">엔키두가 샴하트를 저주하자 꾸짖어 축복으로 돌리게 한다</td></tr>
+    <tr><td class="c-ch">16</td><td class="c-god">엔릴 → 난나 → 에아 → 샤마쉬</td><td class="c-do">엔키두를 돌려달라는 청을 엔릴이 거절하고 난나도 거절한다. <strong>에아가 나서 샤마쉬에게 저승에 구멍을 열게 한다.</strong> 계보가 서사로 작동하는 가장 선명한 장면</td></tr>
+    <tr><td class="c-ch">17</td><td class="c-god">샤마쉬</td><td class="c-do">마슈 산은 해가 드나드는 문이다. 전갈 부부는 그 문의 수호자</td></tr>
+  </table>
+</div>
+
+<div class="phase">
+  <p class="phase-h">18~23장 · 세상 끝과 귀환</p>
+  <table>
+    <tr><th>장</th><th>신</th><th>하는 일</th></tr>
+    <tr><td class="c-ch">18</td><td class="c-god">씨두리</td><td class="c-do">인간이 아니라 술의 여신격 존재로 본다</td></tr>
+    <tr><td class="c-ch">21</td><td class="c-god">거의 전원</td><td class="c-do"><strong>엔릴</strong>이 홍수를 결정 → <strong>에아</strong>가 갈대벽에 대고 우트나피쉬팀에게 귀띔 → <strong>아다드</strong>의 폭풍, <strong>네르갈</strong>이 기둥을 뽑고 <strong>니누르타</strong>가 둑을 무너뜨리고 <strong>아눈나키</strong>가 횃불을 들어올린다 → <strong>이쉬타르</strong>가 산모처럼 통곡하고 <strong>벨레트-일리(아루루)</strong>가 후회한다 → 제물 냄새에 신들이 파리처럼 모여든다 → <strong>에아</strong>가 엔릴을 설득해 우트나피쉬팀에게 불멸을 얻어준다</td></tr>
+    <tr><td class="c-ch">23</td><td class="c-god">엔릴 · 엔키 · 에레쉬키갈</td><td class="c-do">신들의 회의가 길가메쉬의 운명을 정한다. 그는 죽어 저승의 판관이 된다</td></tr>
+  </table>
+</div>
+
+<div class="insight">
+  <h4>여기서 보이는 것</h4>
+  <ul>
+    <li><strong>엔릴은 언제나 죽이는 쪽입니다.</strong> 훔바바를 세우고(6장), 엔키두를 지목하고(14장), 저승행 청을 거절하고(16장), 홍수를 일으키고(21장), 마지막 판결까지(23장). 다섯 번 다 같은 방향</li>
+    <li><strong>엔키는 언제나 살리는 쪽입니다.</strong> 홍수를 귀띔하고, 저승에 구멍을 열고, 엔릴을 설득해 불멸을 얻어냅니다. 계보상 형제인 둘이 서사의 두 극을 이룹니다</li>
+    <li><strong>샤마쉬는 길가메쉬 개인의 후원자입니다.</strong> 신들의 회의에서 유일하게 편들다 면박당하는 것도 그. 이 편애가 어디서 오는지 서사시는 끝내 설명하지 않습니다</li>
+    <li><strong>이쉬타르는 촉발자입니다.</strong> 직접 죽이지 않고 사건을 만듭니다. 샴하트를 통해 엔키두를 인간으로 만들고, 청혼으로 파국을 열고, 홍수에서는 오히려 통곡합니다</li>
+    <li><strong>최고신 안은 실권이 없습니다.</strong> 딸의 협박에 굴복해 황소를 내주는 것이 그의 가장 큰 행동. 이름만 꼭대기에 있고 세상을 굴리는 것은 엔릴과 엔키입니다</li>
+  </ul>
+</div>
+
+<footer>
+  두 이름이 병기된 인물은 <strong>수메르어 이름 / 악카드어 이름</strong>입니다.<br>
+  김산해 판은 표준판 11서판에 수메르 독립 설화들을 시간순으로 엮은 통합본이라,<br>
+  13장(아가) · 16장(저승) · 23장(길가메쉬의 죽음)은 표준판 서사에는 없는 대목입니다.
+</footer>
+
+</div>
+
+<script>
+const GODS = {
+  "안": {orig:"An / Anu — 하늘의 신, 최고신", role:"이름은 꼭대기에 있지만 실권은 없습니다. 딸의 협박에 굴복하는 것이 그의 가장 큰 행동입니다.", app:[
+    ["1장","우루크는 안과 이쉬타르의 도시(에안나 신전). 폭정에 시달린 백성의 탄원이 그에게 올라간다"],
+    ["2장","아루루에게 명해 엔키두를 빚게 한다"],
+    ["12장","이쉬타르가 하늘의 황소를 요구하자 거절하지만, <strong>저승 문을 부수겠다는 협박</strong>에 굴복한다"],
+    ["14장","신들의 회의에 참석. 엔키두의 운명이 결정된다"],
+    ["21장","홍수가 끝난 뒤 청금석 목걸이를 두고 맹세한다"]
+  ]},
+  "엔릴": {orig:"Enlil — 대기 · 바람, 실질적 최고 권력", role:"다섯 번 등장해 다섯 번 모두 죽이는 쪽에 섭니다. 서사시에서 가장 일관된 신입니다.", app:[
+    ["6장","훔바바를 삼목산 수호자로 임명한 자로 언급된다. 살해가 신성모독이 되는 근거"],
+    ["10장","분노한다. 훔바바의 일곱 광휘를 거두어 자연에 나눠준다"],
+    ["14장","<strong>신들의 회의에서 엔키두를 죽음으로 지목한다.</strong> 샤마쉬의 변호를 면박한다"],
+    ["16장","엔키두를 돌려달라는 청을 가장 먼저 거절한다"],
+    ["21장","<strong>홍수를 결정한 장본인.</strong> 생존자가 있음을 알고 격노했다가 에아에게 설득당한다"],
+    ["23장","신들의 회의에서 길가메쉬의 죽음을 확정한다"]
+  ]},
+  "엔키": {orig:"Enki / Ea — 지혜 · 담수(압주)", role:"엔릴의 형제이자 정반대 극. 언제나 인간을 살리는 쪽에 섭니다.", app:[
+    ["14장","신들의 회의에 참석한다"],
+    ["16장","<strong>샤마쉬에게 저승의 구멍을 열게 해</strong> 엔키두의 혼령을 올려보낸다"],
+    ["21장","맹세를 어기지 않으려 <strong>갈대벽에 대고</strong> 우트나피쉬팀에게 홍수를 귀띔한다. 뒤에 엔릴을 설득해 그에게 불멸을 얻어준다"],
+    ["23장","길가메쉬의 운명을 정하는 회의에 참석한다"]
+  ]},
+  "이쉬타르": {orig:"Ishtar / Inanna — 사랑 · 전쟁", role:"직접 죽이지 않고 사건을 만드는 촉발자. 우루크의 수호신이면서 그 왕을 파멸로 몹니다.", app:[
+    ["1장","우루크 에안나 신전의 주인"],
+    ["3장","샴하트가 그녀의 신전 사제 — 엔키두의 문명화가 그녀의 영역에서 일어난다"],
+    ["5장","신성혼 의례가 두 사람의 만남 배경이 된다"],
+    ["11장","<strong>청혼했다가 모욕적으로 거절당한다.</strong> 옛 연인 목록이 낭독된다"],
+    ["12장","아버지 안을 협박해 하늘의 황소를 얻어낸다. 황소가 죽자 성벽 위에서 저주한다"],
+    ["21장","홍수 앞에서 <strong>산모처럼 통곡한다.</strong> 자기 백성이 물고기처럼 떠다닌다며 후회한다"]
+  ]},
+  "우투": {orig:"Utu / Shamash — 태양 · 정의", role:"길가메쉬 개인의 후원자. 이 편애의 이유를 서사시는 끝내 설명하지 않습니다.", app:[
+    ["6장","원정의 허락을 구하는 대상"],
+    ["7장","닌순이 지붕에서 그에게 기도한다. <strong>아내 아야에게 남편을 일깨워달라 청하는 대목</strong>이 여기"],
+    ["8장","산행 중 청한 꿈을 계속 보내준다"],
+    ["9장","<strong>열세 바람을 보내 훔바바를 붙든다.</strong> 이 승리는 사실상 그가 만든 것"],
+    ["14장","신들의 회의에서 유일하게 엔키두를 변호하다 엔릴에게 면박당한다. 엔키두가 샴하트를 저주하자 꾸짖어 축복으로 돌리게 한다"],
+    ["16장","에아의 뜻에 따라 저승에 구멍을 연다"],
+    ["17장","마슈 산은 그가 드나드는 해의 문. 전갈 부부가 그 문을 지킨다"]
+  ]},
+  "아루루": {orig:"Aruru / Belet-ili — 모신(母神)", role:"닌후르쌍 · 마미 등 여러 이름으로 불리는 대모신. 인간과 엔키두를 빚은 손입니다.", app:[
+    ["2장","<strong>손을 씻고 진흙을 떼어 초원에 던져 엔키두를 만든다</strong>"],
+    ["21장","벨레트-일리라는 이름으로 등장. 홍수를 승인한 것을 후회하며 통곡한다"]
+  ]},
+  "에레쉬키갈": {orig:"Ereshkigal — 저승의 여왕", role:"이쉬타르의 언니. 한번 들어온 자를 놓아주지 않는 '돌아올 수 없는 땅'의 주인입니다.", app:[
+    ["14장","엔키두의 악몽 속 저승에 서기 벨레트-체리와 함께 등장한다"],
+    ["16장","엔키두를 붙든 저승의 주권자"],
+    ["23장","길가메쉬가 저승에 이르러 그녀와 신들에게 예물을 바친다"]
+  ]},
+  "난나": {orig:"Nanna / Sin — 달의 신", role:"우투와 이쉬타르의 아버지. 서사에는 거의 개입하지 않습니다.", app:[
+    ["16장","엔키두를 돌려달라는 청을 엔릴에 이어 거절한다"]
+  ]},
+  "니누르타": {orig:"Ninurta — 전쟁 · 농경", role:"엔릴의 아들. 비유와 홍수 장면에만 짧게 나옵니다.", app:[
+    ["2장","엔키두의 곱슬머리를 묘사할 때 비유로 언급된다"],
+    ["21장","홍수 때 둑을 무너뜨린다"]
+  ]},
+  "닌순": {orig:"Ninsun — 길가메쉬의 어머니, '지혜로운 들소 여인'", role:"신이면서 어머니. 서사시에서 가장 인간적인 신입니다.", app:[
+    ["1장","길가메쉬가 3분의 2는 신인 근거"],
+    ["4장","아들의 꿈을 해몽한다. 별과 도끼는 곧 찾아올 벗이라고"],
+    ["7장","<strong>지붕에 올라 향을 피우고 샤마쉬에게 기도한다.</strong> 이어 엔키두의 목에 부적을 걸어 아들로 입양한다"]
+  ]}
+};
+
+const panel = document.getElementById('godpanel');
+let current = null;
+
+function closePanel(){
+  panel.hidden = true;
+  document.querySelectorAll('.node[data-god].on').forEach(n=>n.classList.remove('on'));
+  current = null;
+}
+
+document.querySelectorAll('.node[data-god]').forEach(node=>{
+  node.setAttribute('tabindex','0');
+  node.setAttribute('role','button');
+  const act = ()=>{
+    const key = node.dataset.god;
+    if(current === key){ closePanel(); return; }
+    const g = GODS[key];
+    if(!g) return;
+    document.querySelectorAll('.node[data-god].on').forEach(n=>n.classList.remove('on'));
+    node.classList.add('on');
+    current = key;
+    panel.innerHTML =
+      '<button class="gp-close" aria-label="닫기">&times;</button>' +
+      '<h3>' + key + '</h3>' +
+      '<p class="gp-orig">' + g.orig + '</p>' +
+      '<p class="gp-role">' + g.role + '</p>' +
+      '<ol>' + g.app.map(a =>
+        '<li><span class="gp-ch">' + a[0] + '</span><span class="gp-tx">' + a[1] + '</span></li>'
+      ).join('') + '</ol>';
+    panel.hidden = false;
+    panel.querySelector('.gp-close').addEventListener('click', closePanel);
+    panel.scrollIntoView({behavior:'smooth', block:'nearest'});
+  };
+  node.addEventListener('click', act);
+  node.addEventListener('keydown', e=>{
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); act(); }
+  });
+});
+</script>
+</body>
+</html>
