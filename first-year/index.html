@@ -92,6 +92,9 @@ section>header{display:grid;gap:6px}
 .topics{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
 .topics li{font-size:.9rem;line-height:1.45;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:3px 9px}
 .topics li.ops{color:var(--muted)}
+.topics li a{color:inherit;text-decoration:none}
+.topics li:hover{border-color:var(--accent)}
+.topics li:hover a{color:var(--accent)}
 .more{justify-self:start;font-family:var(--ui);font-size:.8rem;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
 .who{font-family:var(--ui);font-size:.8rem;color:var(--muted)}
 .read{justify-self:start;font-family:var(--ui);font-size:.82rem;color:var(--accent);text-decoration:none;border-bottom:1px solid currentColor}
@@ -182,7 +185,7 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);font-fa
 
 <section id="sundays" aria-labelledby="h-sundays">
   <header><p class="label">스물여섯 번의 일요일</p><h2 id="h-sundays">그날 우리가 이야기한 것</h2>
-  <p class="lede">회차마다 활동일지의 소주제를 그대로 옮겼다. 문화권을 골라 보거나, 회차마다 ‘모두 보기’를 눌러 그날 이야기 갈래를 다 펼쳐 볼 수 있다. ‘일지 전문 읽기’를 누르면 그날 활동일지 전체가 열린다. 회원 비밀번호가 필요하다.</p></header>
+  <p class="lede">회차마다 활동일지의 소주제를 그대로 옮겼다. 문화권을 골라 보거나, 회차마다 ‘모두 보기’를 눌러 그날 이야기 갈래를 다 펼쳐 볼 수 있다. 이야기 갈래를 누르면 그날 활동일지의 해당 대목으로 바로 간다. 회원 비밀번호가 필요하다.</p></header>
   <div class="filters" id="filters" role="group" aria-label="문화권 고르기"></div>
   <ol class="mlist" id="mlist"></ol>
 </section>
@@ -294,7 +297,7 @@ function renderList(){
       <div class="no">${m.no}<small>${m.date}</small></div>
       <div class="mb">
         <div class="meta"><span class="bk">${esc(m.book)}</span><span>${esc(m.range)}</span></div>
-        <ul class="topics">${first.map(t=>`<li${ops(t)?' class="ops"':''}>${esc(t)}</li>`).join("")}${rest.map(t=>`<li hidden${ops(t)?' class="ops"':''}>${esc(t)}</li>`).join("")}</ul>
+        <ul class="topics">${topics.map((t,i)=>`<li${i>=SHOW?' hidden':''}${ops(t)?' class="ops"':''}><a href="https://minfore-crypto.github.io/samyeohoe/first-year/ilji/#m${m.no}-${i}" target="_blank" rel="noopener">${esc(t)}</a></li>`).join("")}</ul>
         ${rest.length?`<button class="more" id="more-${m.no}" aria-expanded="false" data-n="${rest.length}">모두 보기 (+${rest.length})</button>`:""}
         <p class="who">${m.people.length}명 · ${m.people.join(", ")}</p>
         <a class="read" href="https://minfore-crypto.github.io/samyeohoe/first-year/ilji/#m${m.no}" target="_blank" rel="noopener">${m.no}차 일지 전문 읽기 →</a>
