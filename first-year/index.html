@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="꽃초롱작은도서관 삼여회 독서모임 창립 1주년 — 신화를 읽은 스물여섯 번의 일요일 아침">
+<meta property="og:type" content="website">
+<meta property="og:title" content="삼여회 첫 해">
+<meta property="og:description" content="신화를 읽은 스물여섯 번의 일요일 아침 · 2025.10.26–2026.10.26">
+<meta property="og:url" content="https://minfore-crypto.github.io/samyeohoe/first-year/">
+<title>삼여회 첫 해</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Song+Myung&family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* Layout: 한 줄로 흐르는 일요일 아침의 책 — 좁은 본문 칼럼, 문화권 색 띠가 한 해의 지도 역할 */
+:root{
+  --paper:#eef1f1; --sheet:#f8f9f8; --ink:#1c2340; --muted:#596079; --rule:#cdd3da;
+  --accent:#2d4a94; --gold:#a97d22;
+  --kr:#2f4c93; --jp:#a9473b; --gr:#2f7d80; --no:#62679a; --su:#97722a;
+  --display:"Song Myung","Gowun Batang",serif;
+  --body:"Gowun Batang","Nanum Myeongjo","AppleMyungjo",serif;
+  --ui:"IBM Plex Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#12162a; --sheet:#181d34; --ink:#e4e7f0; --muted:#9aa1ba; --rule:#2c3350;
+  --accent:#8fa8ec; --gold:#d8b25c;
+  --kr:#7f9be0; --jp:#e08a7c; --gr:#6cc0c0; --no:#a6aae0; --su:#d6b064; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#12162a; --sheet:#181d34; --ink:#e4e7f0; --muted:#9aa1ba; --rule:#2c3350;
+  --accent:#8fa8ec; --gold:#d8b25c;
+  --kr:#7f9be0; --jp:#e08a7c; --gr:#6cc0c0; --no:#a6aae0; --su:#d6b064; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.8;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+.wrap{max-width:760px;margin:0 auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0}
+h2{font-size:1.9rem;line-height:1.3}
+h3{font-size:1.3rem}
+p{margin:0}
+.label{font-family:var(--ui);font-size:.75rem;letter-spacing:.12em;color:var(--muted);text-transform:uppercase}
+section{padding-block:56px 8px;display:grid;gap:22px}
+section>header{display:grid;gap:6px}
+.lede{color:var(--muted);max-width:62ch}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* hero */
+.hero{padding-block:64px 24px;display:grid;gap:26px;border-bottom:1px solid var(--rule)}
+.hanja{font-family:var(--display);font-size:clamp(5rem,22vw,9.5rem);line-height:.95;letter-spacing:.04em;color:var(--ink)}
+.hanja span{color:var(--gold)}
+.hero h1{font-size:clamp(1.7rem,5.5vw,2.4rem);line-height:1.35}
+.three{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 14px;font-family:var(--ui);font-size:.95rem;color:var(--muted)}
+.three s{text-decoration-color:var(--muted)}
+.three b{color:var(--ink);font-weight:600}
+.three .arrow{color:var(--gold)}
+.hero .origin{max-width:62ch}
+
+/* figures */
+.figs{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 24px;padding-block:28px;border-bottom:1px solid var(--rule)}
+.fig{display:grid;gap:2px}
+.fig strong{font-family:var(--display);font-weight:400;font-size:2.2rem;line-height:1.1;font-variant-numeric:tabular-nums}
+.fig span{font-family:var(--ui);font-size:.82rem;color:var(--muted);line-height:1.5}
+
+/* journey band */
+.band{display:flex;height:44px;border-radius:3px;overflow:hidden;gap:2px}
+.band div{display:flex;align-items:center;justify-content:center;color:var(--sheet);font-family:var(--ui);font-size:.78rem;font-weight:600;min-width:0;overflow:hidden;white-space:nowrap}
+.bandscale{display:flex;justify-content:space-between;font-family:var(--ui);font-size:.75rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.chapters{display:grid;gap:0}
+.ch{display:grid;grid-template-columns:120px 1fr;gap:6px 22px;padding-block:22px;border-top:1px solid var(--rule)}
+.ch:first-child{border-top:0}
+.ch .when{font-family:var(--ui);font-size:.82rem;color:var(--muted);display:grid;align-content:start;gap:4px}
+.ch .when b{font-family:var(--display);font-weight:400;font-size:1.25rem;color:var(--c)}
+.ch .body{display:grid;gap:8px;min-width:0}
+.ch .book{font-family:var(--ui);font-size:.88rem;color:var(--muted)}
+.ch ul{margin:0;padding-left:1.1em;display:grid;gap:2px}
+.ch li::marker{color:var(--c)}
+
+/* meetings */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-family:var(--ui);font-size:.85rem;border:1px solid var(--rule);background:transparent;color:var(--ink);border-radius:999px;padding:5px 13px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:6px;vertical-align:1px;font-style:normal}
+.mlist{display:grid;gap:0;list-style:none;margin:0;padding:0}
+.m{display:grid;grid-template-columns:64px 1fr;gap:4px 18px;padding-block:18px;border-top:1px solid var(--rule)}
+.m .no{font-family:var(--display);font-size:1.7rem;line-height:1.1;color:var(--c);font-variant-numeric:tabular-nums}
+.m .no small{display:block;font-family:var(--ui);font-size:.72rem;color:var(--muted);margin-top:4px;letter-spacing:.02em}
+.m .mb{display:grid;gap:8px;min-width:0}
+.m .meta{display:flex;flex-wrap:wrap;gap:4px 12px;font-family:var(--ui);font-size:.84rem;color:var(--muted)}
+.m .meta .bk{color:var(--ink);font-weight:500}
+.topics{display:flex;flex-wrap:wrap;gap:6px;margin:0;padding:0;list-style:none}
+.topics li{font-size:.9rem;line-height:1.45;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:3px 9px}
+.topics li.ops{color:var(--muted)}
+.more{justify-self:start;font-family:var(--ui);font-size:.8rem;color:var(--accent);background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.who{font-family:var(--ui);font-size:.8rem;color:var(--muted)}
+
+/* attendance */
+.grid-wrap{overflow-x:auto;border:1px solid var(--rule);border-radius:4px;background:var(--sheet)}
+table.att{border-collapse:collapse;font-family:var(--ui);font-size:.78rem;font-variant-numeric:tabular-nums;min-width:640px;width:100%}
+.att th,.att td{padding:6px 3px;text-align:center}
+.att th{color:var(--muted);font-weight:500}
+.att th.n{text-align:left;padding-left:12px;color:var(--ink);white-space:nowrap;font-weight:500}
+.att td.t{text-align:right;padding-right:12px;color:var(--ink);font-weight:600}
+.att thead th{border-bottom:1px solid var(--rule)}
+.dot{display:inline-block;width:11px;height:11px;border-radius:50%;background:var(--c)}
+.dot.off{background:transparent;border:1px solid var(--rule)}
+.dot.pre{background:transparent;border:0}
+.note{font-family:var(--ui);font-size:.82rem;color:var(--muted)}
+
+/* themes */
+.themes{display:grid;gap:0}
+.th{display:grid;grid-template-columns:1fr auto;gap:6px 18px;padding-block:14px;border-top:1px solid var(--rule);align-items:baseline}
+.th h3{font-size:1.15rem}
+.th p{grid-column:1/-1;color:var(--muted);font-size:.95rem}
+.th .runs{display:flex;flex-wrap:wrap;gap:4px;justify-content:flex-end}
+.th .runs a{font-family:var(--ui);font-size:.75rem;color:var(--ink);text-decoration:none;border:1px solid var(--rule);border-radius:3px;padding:0 6px;font-variant-numeric:tabular-nums}
+.th .runs a:hover{border-color:var(--accent);color:var(--accent)}
+
+/* quotes */
+.quotes{display:grid;gap:26px}
+blockquote{margin:0;padding-left:20px;border-left:2px solid var(--gold);display:grid;gap:4px}
+blockquote p{font-family:var(--display);font-size:1.35rem;line-height:1.55}
+blockquote cite{font-style:normal;font-family:var(--ui);font-size:.8rem;color:var(--muted)}
+
+/* next */
+.next{display:grid;gap:14px;background:var(--sheet);border:1px solid var(--rule);border-radius:4px;padding:24px}
+.next dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0}
+.next dt{font-family:var(--ui);font-size:.85rem;color:var(--muted)}
+.next dd{margin:0}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--rule);font-family:var(--ui);font-size:.82rem;color:var(--muted);display:grid;gap:4px}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .ch{grid-template-columns:1fr}
+  .m{grid-template-columns:48px 1fr;gap:4px 12px}
+  .m .no{font-size:1.4rem}
+  .band div span{display:none}
+  .th{grid-template-columns:1fr}
+  .th .runs{justify-content:flex-start}
+}
+@media (prefers-reduced-motion:no-preference){
+  .m{transition:opacity .2s}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="hanja" aria-hidden="true">三<span>餘</span></div>
+  <div style="display:grid;gap:10px">
+    <p class="label">꽃초롱작은도서관 독서동아리 · 2025. 10. 26 – 2026. 10. 26</p>
+    <h1>신화를 읽은 스물여섯 번의 일요일 아침</h1>
+  </div>
+  <div class="three" aria-label="삼여의 세 가지 여유">
+    <s>농사 끝난 겨울</s><s>비 오는 날</s><s>밤</s><span class="arrow">→</span><b>일요일 오전 10시</b>
+  </div>
+  <p class="origin">삼여(三餘)는 독서삼여(讀書三餘)에서 왔다. 공부는 세 가지 여유가 있을 때 하라 했고, 그 셋은 농사가 끝난 겨울과 비 오는 날과 밤이다. 첫 모임에서 우리는 지금 도시에 사는 사람에게 그 시간이 언제인지 따져 보았다. 토요일은 토요일대로 바쁘고 일요일 저녁이면 벌써 다음 주를 준비한다. 그래서 일요일 오전이 우리의 삼여가 되었다. 1년 동안 그 시간에 다섯 문화권의 신화를 읽었다.</p>
+</header>
+
+<div class="figs" aria-label="한 해의 숫자">
+  <div class="fig"><strong>26</strong><span>번 모였다<br>결회 없이, 연기 3번</span></div>
+  <div class="fig"><strong>8</strong><span>권을 다 읽었다<br>9권째 『오뒷세이아』 읽는 중</span></div>
+  <div class="fig"><strong>439</strong><span>개의 이야기 갈래<br>활동일지 소주제 기준</span></div>
+  <div class="fig"><strong>36.6만</strong><span>자의 기록<br>200자 원고지 약 1,830매</span></div>
+</div>
+
+<section id="journey" aria-labelledby="h-journey">
+  <header><p class="label">한 해의 여정</p><h2 id="h-journey">한국에서 출발해 수메르를 지나 다시 그리스로</h2>
+  <p class="lede">첫날 정한 길이다. 한국 신화를 먼저 읽어 기준점을 세우고 세계로 나가자고 했다. 그 뒤로 어떤 책을 펴도 한국 이야기가 먼저 떠올랐다.</p></header>
+  <div>
+    <div class="band" id="band" role="img" aria-label="문화권별 모임 횟수: 한국 10회, 일본 2회, 그리스 3회, 북유럽 7회, 수메르 3회, 오뒷세이아 1회"></div>
+    <div class="bandscale"><span>1차 · 2025.10</span><span>26차 · 2026.10</span></div>
+  </div>
+  <div class="chapters" id="chapters"></div>
+</section>
+
+<section id="sundays" aria-labelledby="h-sundays">
+  <header><p class="label">스물여섯 번의 일요일</p><h2 id="h-sundays">그날 우리가 이야기한 것</h2>
+  <p class="lede">회차마다 활동일지의 소주제를 그대로 옮겼다. 문화권을 골라 보거나, 회차마다 ‘모두 보기’를 눌러 그날 이야기 갈래를 다 펼쳐 볼 수 있다.</p></header>
+  <div class="filters" id="filters" role="group" aria-label="문화권 고르기"></div>
+  <ol class="mlist" id="mlist"></ol>
+</section>
+
+<section id="people" aria-labelledby="h-people">
+  <header><p class="label">함께한 사람들</p><h2 id="h-people">자리를 지킨 일요일들</h2>
+  <p class="lede">이름 옆 점 하나가 한 번의 일요일이다. 세 사람이 한 해를 끌었고, 봄과 여름에 들어온 두 사람이 거의 빠지지 않고 함께했다. 회당 평균 4.3명이 모였다.</p></header>
+  <div class="grid-wrap"><table class="att" id="att"></table></div>
+  <p class="note">빈 동그라미는 결석, 빈칸은 합류하기 전이다. 출처: 회차별 활동일지 참석자 명단.</p>
+</section>
+
+<section id="themes" aria-labelledby="h-themes">
+  <header><p class="label">자꾸 돌아간 질문</p><h2 id="h-themes">책이 바뀌어도 다시 꺼낸 이야기</h2>
+  <p class="lede">신화 강독 모임도 아니고 시사 토론 모임도 아니었다. 그날의 이야기를 읽고, 다른 문화권과 나란히 놓고, 화성과 경기 남부로 내려와, 결국 지금 우리 이야기로 끝나곤 했다. 회차 번호를 누르면 그날 기록으로 간다.</p></header>
+  <div class="themes" id="themelist"></div>
+</section>
+
+<section id="lines" aria-labelledby="h-lines">
+  <header><p class="label">그날의 말</p><h2 id="h-lines">일지에 남은 문장</h2>
+  <p class="lede">일지는 누가 말했는지 적지 않는다. 그래서 이 말들은 우리 모두의 것이다.</p></header>
+  <div class="quotes">
+    <blockquote><p>내가 막힌 곳을 다른 사람이 풀어주고, 그 사람이 막힌 곳을 내가 풀어줄 수 있다.</p><cite>1차 · 2025. 10. 26 · 함께 읽는다는 것</cite></blockquote>
+    <blockquote><p>대단한 것을 하려 하기보다 일단 시작하는 것이 중요하다.</p><cite>1차 · 2025. 10. 26 · 삼여회의 출발</cite></blockquote>
+    <blockquote><p>밖에서 온 사람에게는 하나하나가 더 소중하게 보인다.</p><cite>8차 · 2025. 12. 21 · 지역의 문화자산, 화성을 두고</cite></blockquote>
+    <blockquote><p>오늘의 사람들과 초등학생과 길가메쉬가 크게 다르지 않다. 너도 나와 같다는 감각이 위로가 된다.</p><cite>24차 · 2026. 9. 6 · 고전이 주는 것, 정답 없음을 견디는 힘</cite></blockquote>
+    <blockquote><p>신화는 가장 오래된 이야기이지만 접할수록 오히려 미래적이다.</p><cite>25차 · 2026. 9. 20 · 가장 오래된 여신이 가장 생생하다</cite></blockquote>
+  </div>
+</section>
+
+<section id="next" aria-labelledby="h-next">
+  <header><p class="label">두 번째 해</p><h2 id="h-next">이제 오뒷세우스가 집으로 돌아간다</h2></header>
+  <div class="next">
+    <dl>
+      <dt>읽는 책</dt><dd>『오뒷세이아』 호메로스, 이준석 옮김, 아카넷</dd>
+      <dt>남은 모임</dt><dd>10월 18일 · 11월 1일 · 11월 15일, 일요일 오전 10시</dd>
+      <dt>초청 강연</dt><dd>역자 이준석 교수 『오뒷세이아』 특강<br>2026. 11. 28.(토) 오후 2시, 꽃초롱작은도서관</dd>
+      <dt>그다음</dt><dd>한 권을 마칠 때마다 작은 책자 하나. 첫 모임에서 한 약속이다.</dd>
+    </dl>
+  </div>
+</section>
+
+<footer>
+  <span>삼여회 · 꽃초롱작은도서관 (화성시 봉담읍 와우로34번길 30 관리동 2층)</span>
+  <span>회원 이원영(대표) · 김명수(서기) · 신운화 · 김숙이 · 민수진 · 윤호진, 그리고 함께했던 곽미애 · 백미화</span>
+  <span>1주년 모임 날에 서기 김명수 엮음 · 활동일지 1–26차(2025. 10. 26 – 2026. 10. 4) 바탕</span>
+</footer>
+</div>
+
+<script>
+const DATA = [{"no": 1, "date": "2025.10.26", "k": "kr", "book": "『살아있는 한국 신화』", "range": "창세 신화 부분 함께 읽기", "people": ["김명수", "김숙이", "이원영"], "topics": ["삼여회의 출발 — 모임명과 취지", "독서 로드맵 — 한국에서 시작해 세계로", "어떤 판본으로 읽을 것인가 — 원전 기반 번역의 문제", "한국 신화가 놓인 자리 — 파편적 전승과 뒤늦은 정리", "창세가 함께 읽기 — 붙어 있던 것을 떼어낸 세계", "직성(直星) — 백성의 별이 먼저 있었다", "미륵의 칡 옷 — 생활이 남긴 흔적", "물과 불의 근원 — 생쥐가 승자가 된 이유", "화소(話素)라는 개념 — 이야기를 이루는 최소 단위", "지역으로 내려온 신화 — 시루말과 금덩산", "함께 읽는다는 것", "운영 방식 결정"]}, {"no": 2, "date": "2025.11.09", "k": "kr", "book": "『살아있는 한국 신화』", "range": "1부 75~129쪽 (당금애기 본풀이)", "people": ["김명수", "김숙이", "이원영", "곽미애", "신운화"], "topics": ["신규 회원 환영과 도서 소개", "당금애기 본풀이 함께 읽기 — 시주승과 하룻밤", "돌함에 갇힌 어머니 — 고행과 백학의 산바라지", "삼신이 된 당금애기 — 신들을 낳은 어머니", "마리아와 당금애기 — 이본에 따라 달라지는 잉태", "부재하는 아버지 신 — 왜 한국 신화의 아버지는 떠나는가", "친자 확인이라는 화소 — 피가 엉기는가", "산바라지와 취약한 생명", "스님이라는 설정 — 신성과 파격", "전승의 지역성과 현대 콘텐츠", "운영 논의 — 진행 방식과 참여 조건"]}, {"no": 3, "date": "2025.11.16", "k": "kr", "book": "『살아있는 한국 신화』", "range": "2부 셋째거리~넷째거리 (95~166쪽)", "people": ["김명수", "이원영", "신운화"], "topics": ["사마장자 이야기 — 저승사자를 대접한 부자", "원수가 은인이 되는 법 — 말의 씻김굿과 대수대명", "베풂의 사회적 기능 — 회심곡의 공덕과 노블레스 오블리주", "집에서 치르던 장례 — 공동체 애도의 기억", "최루백 설화와 호랑이 — 아이들이 읽어낸 것", "며느리라는 자리 — 장자못 설화와의 겹침", "모두가 잘되어야 하는 정서 — 드라마와 웹소설", "원혼신격과 공동체 애도 — 오늘의 문제로", "구연의 리듬과 조선의 세계관", "운영 논의 — 진도와 방식"]}, {"no": 4, "date": "2025.11.23", "k": "kr", "book": "『살아있는 한국 신화』", "range": "저승차사 이야기 (133~206쪽)", "people": ["김명수", "김숙이", "이원영", "곽미애", "신운화"], "topics": ["저승차사본풀이 — 망자가 가는 길", "열시왕과 극락 — 왜 이토록 자세히 그렸을까", "불교와 무속의 습합 — 우리 식으로 받아들이는 방식", "사십구재와 짧아진 장례 — 애도의 시간", "임종의 순간 — 이야기로 옮겨진 신체의 변화", "저승에도 질서가 있다는 위안", "한락궁이 — 어머니의 손을 지진 아들", "이해한 뒤에야 신이 된다 — 성장서사로 읽기", "천년장자와 웃음웃을꽃", "서천꽃밭이라는 상상 — 제주의 저승", "구비문학이라는 학문 — 채록과 전사의 현장", "굿의 실질적 기능 — 쉼과 상담", "전통의 재발견 — 상여소리에서 케이팝까지", "운영 논의 — 낭독과 속도"]}, {"no": 5, "date": "2025.11.30", "k": "kr", "book": "『살아있는 한국 신화』", "range": "열한째~열다섯째 거리 (440쪽~끝)", "people": ["김명수", "김숙이", "이원영", "신운화"], "topics": ["허웅애기 — 이승과 저승이 갈라진 내력", "세민황제와 매일장상 — 저승 창고에 쌓이는 것", "대국천자와 소국천자 — 민중이 전한 또 하나의 왕조사", "재물로 상상된 내세 — 오늘의 종교와 겹쳐 읽기", "청정각시 — 고행이라는 증명", "고행의 심리 — 증명인가 단념인가", "바리공주 — 지역별 전승과 여성의 일생", "요구만 받는 존재 — 세대에 따라 달라지는 독법", "한국 신화의 여성들 — 스스로 나서는 인물들", "제주에서 만난 무속 — 상담과 플라시보", "운영 논의"]}, {"no": 6, "date": "2025.12.07", "k": "kr", "book": "『살아있는 한국 신화』", "range": "여덟째~열째 거리 (306~439쪽)", "people": ["김명수", "이원영", "신운화"], "topics": ["칠성풀이 — 한 배에 일곱을 낳은 어머니", "아버지를 찾는다는 것 — 생존과 권리의 문제", "버리려 한 어머니 — 모성이라는 것", "북두칠성과 효불효 다리 — 네 번째 별이 어두운 이유", "칠성탱화와 별을 모시는 신앙", "가믄장아기 — 배꼽 아래 선그믓 덕", "아들의 철듦과 딸의 철듦", "전상의 신 — 안정감 있는 이야기의 매력과 한계", "고산국과 지상국 — 마을 신들의 경계 다툼", "자청비 — 농경신이 된 여성", "하늘은 어찌할 수 없다 — 문도령이라는 존재", "전래동화를 아이에게 읽히는 문제", "독서모임이라는 형식"]}, {"no": 7, "date": "2025.12.14", "k": "kr", "book": "『살아있는 한국 신화』", "range": "성주풀이, 궁상이와 명월각시, 강림도령 본풀이", "people": ["김명수", "김숙이", "이원영", "신운화"], "topics": ["성주풀이 — 집을 짓는 남편과 집을 지키는 아내", "조왕할아버지가 짚은 것 — 사소한 것을 지키는 일", "민요가 된 성주풀이", "성주신이라는 자리 — 대주를 따라 옮겨가는 신", "아파트 시대의 가신들", "오늘의 미신 — 개명과 명리와 소금 단지", "언제 만들어진 이야기인가 — 기록되지 못한 설화", "궁상이와 명월각시 — 애매한 인물들", "팔방야광주 — 영원이 사라진 자리", "옷을 짓는 여성 — 직조와 신격", "강림도령 — 복수와 저승 여행", "저승사자의 이미지와 「신과 함께」", "운영 논의"]}, {"no": 8, "date": "2025.12.21", "k": "kr", "book": "『살아있는 한국 신화』", "range": "궤네깃또", "people": ["김명수", "김숙이", "이원영", "신운화"], "topics": ["모임에 앞서 — 작은도서관을 지키는 일", "궤네깃또 낭독 — 소를 잡아먹은 아버지", "소천국이라는 아버지 — 수렵과 농경 사이", "돼지털과 소당 — 무엇을 올리는 당인가", "제주의 당 — 사진으로 본 답사 기록", "화려한 당과 담백한 당 — 미감의 문제", "제주와 육지 — 도래신과 수탈의 기억", "백두산 천지를 지켜낸 두 영웅 — 낭독", "성룡과 삼태성 — 낭독", "백두 폭포에 깃든 저항의 기백 — 낭독", "정제된 이야기와 날것의 이야기", "콘텐츠가 되는 신화 — 고증과 창작 사이", "전격성 — 무엇에 충실할 것인가", "크레센도와 삭대엽 — 충격의 크기", "지금의 대중문화가 해낸 것", "지역의 문화자산 — 화성을 두고"]}, {"no": 9, "date": "2025.12.28", "k": "kr", "book": "『살아있는 한국 신화』", "range": "천자또와 백조애기", "people": ["김명수", "김숙이", "이원영", "백미화", "신운화"], "topics": ["천자또와 백조애기 — 낭독", "백돌래와 청감주 — 신이 가려 먹는 음식", "서울에서 온 정갈한 신", "나뉜 땅 — 제주 안의 경계", "제주라는 환경 — 눈보라 속의 하룻밤", "무이이와 금상 — 돗제의 유래", "따로 받는 상 — 다름을 인정하는 방식", "당본풀이와 일반신본풀이 — 서사의 층위", "양이목사 — 백마 백 필과 목이 잘린 신", "반역자가 조상신이 되기까지", "고대장 — 신당을 지킨 심방", "제주를 어떻게 볼 것인가 — 관광과 문화", "삼두구미 — 다리를 먹으라는 괴물", "버드나무와 달걀과 무쇠", "삼두구미를 어떻게 읽을까", "전파냐 발생이냐", "문전본풀이 — 일곱 형제가 지킨 집", "가신의 자리 — 부엌과 화장실", "운영 논의"]}, {"no": 10, "date": "2026.01.25", "k": "kr", "book": "『살아있는 한국 신화』", "range": "성조풀이", "people": ["김명수", "김숙이", "신운화", "이원영"], "topics": ["모임에 앞서 — 도서관 프로그램과 운영 이야기", "성조풀이 — 낭독", "문서의 힘 — 맹인 독경과 채록의 배경", "성장담으로서의 성조풀이", "신을 쪼개는 관념 — 땅과 집", "시골의 땅 — 경계와 소작", "남자의 성인식 — 통과의례가 사라진 자리", "몸에 남는 것들", "세대와 젠더 — 된장녀에서 지금까지", "경력단절 — 도서관에서 만나는 사람들", "광청아기 — 낭독", "원혼을 어떻게 할 것인가", "말무덤과 마을 재판 — 공동체가 갈등을 다루는 법", "거북이와 남생이 — 낭독", "낮은 데서 피어나는 신성", "무속에 대한 오해", "운영 논의 — 일본 신화를 어떻게 읽을 것인가"]}, {"no": 11, "date": "2026.02.08", "k": "jp", "book": "『일본 신화 깊이 읽기』", "range": "1장~5장", "people": ["김명수", "이원영", "신운화", "김숙이"], "topics": ["익숙하지 않다 — 첫 인상", "신의 역할이 명확하지 않다는 것", "일본 사람의 자리에서 세상을 본다는 것", "옛 기록을 읽는다는 일", "자기 뿌리에 대한 양가감정", "천신의 계보는 왜 이렇게 긴가", "섬을 하나하나 낳는다는 것", "떠다니는 섬, 걸어온 바위", "창세의 순서 — 집이 바다보다 먼저인 까닭", "화신의 죽음과 화산", "칼에 묻은 피", "성(性)의 서술 — 직설과 은유", "여성성과 죽음, 그리고 기다림의 금기", "선돌 — 세운다는 것", "괴물을 물리치고 여인을 얻다 — 거타지 설화와의 닮음", "스사노오 — 어머니 없는 신", "소시모리와 우두산 — 식민주의 사관이 지나간 자리", "곰과 호랑이, 쑥과 마늘", "자료를 남긴다는 일", "이즈모 답사 회상", "사카이미나토와 요괴를 정리한 사람", "계보를 적는다는 것", "독서 방식 논의"]}, {"no": 12, "date": "2026.02.22", "k": "jp", "book": "『일본 신화 깊이 읽기』", "range": "6장~9장 (완독)", "people": ["김명수", "이원영", "신운화", "김숙이"], "topics": ["귀신이 있다고 믿던 사람들 — 조선의 경우", "예법이 까다로운 나라 — 명나라 장수의 평", "국(國)이라는 단위", "이즈모의 국양(國讓り) — 체면을 살려주는 복속", "닮은 외모라는 화소", "일본의 지역주의와 우리의 중앙집권", "문중이라는 것 — 성씨와 소속감", "이즈모타이샤 — 48미터의 신전", "국인기(國引き) — 신라 땅을 끌어왔다는 이야기", "『고사기』 속의 한국(韓國)", "시마네현과 독도", "조상신을 계보에 끼워 넣기 — 나카토미와 후지와라", "천황은 왜 죽는가", "알맹이 없는 상징 — 아마테라스와 천황", "삼종신기는 어디에 있는가", "귀 없는 호이치와 헤이케 모노가타리", "와니 — 악어에서 상어로", "곡옥이라는 형상", "삼종신기가 격투 게임이 되기까지", "모모타로와 오니 — 신화의 전시 동원", "하룻밤 임신 — 아버지가 사라지는 이유", "마무리하며", "운영 논의"]}, {"no": 13, "date": "2026.03.15", "k": "gr", "book": "『그리스 신화』 아폴로도로스", "range": "1권 전체 ~ 2권 224쪽", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["출처를 찾기 어려운 신화 — 강대진 역본의 쓸모", "삽화가 있어야 보이는 것", "가이아와 우라노스 — 세계 생성의 두 원리", "아테나의 탄생 — 삼켜진 어머니", "아테나와 아레스 — 왜 늘 아테나가 이기는가", "로마의 3주신이 바뀌기까지", "『도서관』이라는 제목 — 고대의 서가", "이름을 늘어놓는 즐거움", "그래서 축제 때 여자들이 농담을 했다", "마르시아스 — 관악과 현악의 위계", "계급으로서의 신 — 한국 신화와의 대비", "프로메테우스를 풀어주는 헤라클레스", "제사가 먼저인 사회", "봉건이라는 것 — 아직 남은 것들", "진짜와 가짜를 못 알아보는 사람", "신화가 콘텐츠가 되는 방식", "웹소설은 문학인가", "우리 이야기는 왜 대중화되지 않는가", "화소는 왜 이렇게 겹치는가", "의식이 사라진 자리", "마무리하며"]}, {"no": 14, "date": "2026.03.29", "k": "gr", "book": "『그리스 신화』 아폴로도로스", "range": "2권~3권 340쪽", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["지도를 펼치고 — 그리스 사람들이 생각한 '우리'", "콜키스는 어디인가 — 메데이아가 이방인이라는 것", "아이아스와 살라미스 — 도기에 새긴 영유권", "우리는 왜 그런 주장을 하지 않았나", "지금 그리스 사람들은 이 이야기를 어떻게 볼까", "복고라는 것 — 80년대는 힙하고 90년대는 구리다", "크레타의 뱀 여신상과 황소 숭배", "암소가 쓰러진 자리", "뱀 — 동양에서 신, 서양에서 저주", "뱀이 물고 온 잎사귀", "침을 뱉는다는 것", "하르모니아의 목걸이 — 조화라는 이름의 저주", "신은 되풀이하고 인간은 되풀이당한다", "끝장을 보는 사람들", "디오니소스 — 질서 잡힌 세계의 혼돈 담당", "분리하는 세계관, 함께 사는 세계관", "축제에서 디오니소스적인 것을 되살린다는 말", "켄타우로스 — 야만의 도상과 헬레니즘의 역설", "게임으로 지리를 배운다는 것", "공정이라는 말 — 호흡이 짧아진 공정", "옛 대학의 풍경 — 지금은 불가능해진 것들", "AI 시대에 글쓰기 과제를 낸다는 것", "요약될 수 없는 것", "도서관 이야기 — 쓰레기통이 고쳐졌어요", "운영 논의"]}, {"no": 15, "date": "2026.04.19", "k": "gr", "book": "『그리스 신화』 아폴로도로스", "range": "요약집 포함 343~446쪽", "people": ["이원영", "김명수", "신운화", "민수진", "곽미애"], "topics": ["도서 구입 예산과 다음 책", "이 책은 왜 이렇게 불친절한가", "성경이라는 고전", "미노타우로스 — 권력의 치부", "아리아드네를 버린다는 것", "이카루스의 날개 — 밀랍인가 접착제인가", "히폴리토스 — 한 여신의 가치를 부정한다는 것", "켄타우로마키아 — 파르테논이 말하는 세계관", "죽이고 나서 사랑에 빠지다", "부상 입힐 수 없는 남자", "지명에 남은 이야기", "자식을 먹이는 복수", "나우플리오스의 복수 — 가정을 무너뜨리다", "헬레네는 스스로 떠났다", "참전자 목록과 병참", "이피게니아 — 뒤에서 다시 만나는 사람", "도기 미술의 역설 — 우리도 저렇게 될 수 있다", "트로이 목마 — 지친 사람들의 마음", "다시 보는 아폴론", "상사뱀 — 이순신 버전과 신립 버전", "한국 신화는 왜 계보가 없는가", "이성계는 수달의 아들이었다", "파트로클로스와 디오메데스", "아이아스의 광기", "오디세우스는 왜 이름을 밝혔는가", "로토스와 키르케 — 안주하고 싶은 마음", "세이렌 — 알아서는 안 될 것을 알려주겠다는 유혹", "파리스는 왜 아프로디테를 골랐는가", "곁가지 — 창작자는 왜 기대를 배반하는가", "운영 논의"]}, {"no": 16, "date": "2026.05.03", "k": "no", "book": "『북유럽 신화』 1권", "range": "1권 2장까지 (~164쪽)", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["어떤 판본을 볼 것인가 — 참고도서 정리", "태초의 암소와 소금돌", "인간은 몇 번 창조되는가", "아무짝에도 쓸모없는 거인만 만들고 있네", "난쟁이와 엘프", "밤은 어머니, 낮은 아들", "늑대에게 쫓기는 해와 달", "홀레 할머니를 찾아서 — 독일 답사 이야기", "아스 신족과 반 신족 — 오딘 숭배가 이기기까지", "그림은 서툴러도 세공은 뛰어난 사람들", "미미르와 오딘 — 인식자로서의 신", "스스로 매달린 신", "이름을 안다는 것", "공짜가 없는 세계", "잃음으로써 얻는 것", "황금이라는 것", "이야기가 이야기를 낳는 방식", "곁가지 — 번역의 벽이 사라진 뒤", "마무리하며"]}, {"no": 17, "date": "2026.05.17", "k": "no", "book": "『북유럽 신화』 1권", "range": "신들의 모험 끝까지 (1권 완독)", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["로키라는 캐릭터 — 생각보다 일관성 있는 존재", "발더가 뜻하는 것 — 완전한 안정이라는 두려움", "한국의 트릭스터 — 강림도령과 봉이 김선달", "언제 채록된 이야기인가 — 지층의 문제", "자료가 없다는 것", "구비문학이 학문이 되기까지", "노르드어와 두 신족", "죽음은 얼음이다", "꿀술 — 시와 노동의 값", "값을 치른다는 것 — 예술과 노동", "오딘과 토르 — 지혜를 구하는 아버지, 부딪히는 아들", "토르는 농경신이었다 — 염소와 농민의 얼굴", "우트가르드 로키 — 불과 생각과 세월", "흐룽니르 — 결투의 규칙과 점토 거인", "숫돌이 박힌 머리", "히미르의 솥과 붉은 강", "여장한 토르 — 웃음을 위한 이야기", "알비스 — 이름을 아는 것과 지혜", "북유럽 신들의 인간적인 얼굴", "운영 논의 — 진도와 앞으로의 신화 순례"]}, {"no": 18, "date": "2026.05.31", "k": "no", "book": "『북유럽 신화』 2권", "range": "라그나로크까지 (「못다한 이야기」 앞까지)", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["뉴스로 듣는 종말 — 라그나로크 전투 장면의 허탈함", "로키의 자식들 — 배제가 낳은 것", "노르네와 발퀴레와 발라 — 오딘이 무당을 찾아간 셈", "이그드라실 — 나무에서 시작해 나무로", "운명을 알고도 달려가는 것", "이집트와 메소포타미아 — 내세관은 왜 갈리는가", "발더의 부활을 어떻게 볼 것인가", "우음도 당제 — 사라진 마을이 남긴 것", "저변이라는 것 — 문화의 두께", "무대가 없다 — 판소리 전공자들의 이야기", "비참함을 증명해야 하는 일", "중간에 선 사람의 몫", "곁가지 — 대상이 된다는 것", "운영 논의"]}, {"no": 19, "date": "2026.06.21", "k": "no", "book": "『북유럽 신화』 2권", "range": "75쪽부터 — 프레이 신족, 스카디와 뇨르드, 하임달, 이둔 여신", "people": ["김명수", "이원영", "민수진", "신운화", "김숙이"], "topics": ["앞선 회차 정리 — 북유럽 신화의 두 계통", "프레이와 게르드 — 대가 없는 것은 없다", "수퇘지와 고양이 — 상징의 대응", "마녀와 고양이 — 불길함이 매력이 되기까지", "견묘쟁주 — 습성이 그대로 서사가 되는 이야기", "돼지라는 짐승", "아스 신족과 반 신족 — 좋았던 시절은 갔다", "바이킹이라는 정체성 — 월드컵 화보를 보며", "축구라는 진형 싸움", "바이킹은 야만이었는가", "스카디와 뇨르드 — 발을 보고 고른 남편", "이둔과 브라기 — 젊음의 사과를 지키는 자", "노르네와 발라 — 아는 자와 말하는 자", "사과와 복숭아", "로키와 하임달 — 질서와 그 반대편", "하임달이 만든 계급 — 야를과 코눙", "플라이팅 — 공개 모욕이라는 제도", "거인이란 무엇인가", "우리에게는 지진의 신이 없다", "물을 마실 수 없는 땅 — 어느 생존 프로그램을 보며", "성실에 대한 보상과 덕에 대한 보상", "니벨룽겐 — 바그너와 번역의 문제", "압축된 것을 풀어 읽는다는 것"]}, {"no": 20, "date": "2026.07.12", "k": "no", "book": "『북유럽 신화』 2·3권", "range": "발더의 죽음, 라그나로크, 에다 세계의 영웅들", "people": ["김명수", "이원영", "신운화", "민수진", "김숙이"], "topics": ["볼숭 가문 — 시조를 갖는다는 것", "게르만인이 만난 예수 — 죽음을 이긴 신", "지역마다 다른 신 — 오딘의 위상 변화", "곁가지 — 지금의 교육을 두고", "발더의 죽음과 겨우살이", "겨우살이라는 식물", "아킬레우스의 발뒤꿈치와 나란히", "로키가 울지 않았다 — 만장일치의 불가능", "빛을 잃는다는 공포", "부활이 없는 세계", "물러설 곳이 없는 복수", "사비니 여인들과의 대비", "지그니 — 끝까지 가는 여자들", "말싸움의 문화 — 구술의 경합성", "로키와 상관(傷官)", "브룬힐트라는 이름 — 역사와 이야기 사이", "아이에게 무엇을 읽힐 것인가", "납작해진 고전 — 캔슬과 요약 사이", "지금도 만들어지는 야사", "지라이야 — 남의 나라 장군이 요괴가 되기까지"]}, {"no": 21, "date": "2026.07.26", "k": "no", "book": "『북유럽 신화』 3권", "range": "대장장이 뷜룬트 편 및 관련 신화", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["대장장이 뷜룬트와 백조 처녀 — 날개옷 화소의 분포", "선녀와 나무꾼 — 자식을 데려가는 어머니", "부부 서사로 읽는 선녀와 나무꾼", "등급이 없던 이야기 — 굿판의 청중", "플라톤의 시인 비판", "한국 신화의 절제 — 우회하는 서술", "콘텐츠가 사람을 만드는가", "플라톤이 살았던 시대", "민주정에서 참주정으로 — 2500년 전의 진단", "정치를 이야기한다는 것", "세대의 문제 — 86세대와 그 이후", "학생운동의 기억", "지금의 20대 — 세대 갈등의 결", "「창녀 찾기」 퍼포먼스 — 관객을 시험하는 예술", "안 할 이유가 없잖아요 — 학생들의 반응", "사법과 일상 — 수사권을 둘러싼 논의", "오늘의 모임에 대하여"]}, {"no": 22, "date": "2026.08.09", "k": "no", "book": "『북유럽 신화』 3권", "range": "대장장이 뷜룬트 편 이후부터 완독", "people": ["이원영", "김명수", "신운화", "민수진", "윤호진"], "topics": ["새 회원을 맞으며 — 도서관 운영 소개", "3권은 왜 이질적인가 — 신화에서 기사문학으로", "성배 — 잔이 아닌 것으로 만들다", "용왕은 왜 절에 있는가", "후진이 없는 복수", "베오울프 이후 — 무엇이 달라지는가", "언제 문자가 되었는가", "그리스 사람들은 이상한 사람들이다", "파르치팔 — 튜토리얼을 건너뛴 아이", "헤르첼로이데 — 아들만은 지키려던 사람", "한복판을 꿰뚫는 자", "왜 재미가 없는가 — 내면의 성장이 없다", "성배의 기사와 세속의 기사 — 두 갈래 길", "연민이라는 열쇠", "트리스탄과 이졸데 — 눈빛 하나로 설득한다는 것", "늑대인간 — 넘지 말아야 할 선", "저승까지 이어지는 계급", "간달프는 오딘이었다", "그림이 남아 있다는 것", "운영 논의"]}, {"no": 23, "date": "2026.08.23", "k": "su", "book": "『길가메쉬 서사시』", "range": "「책을 내면서」·「일러두기」 및 1부 「최초의 신화, 그 탄생의 비밀」, 2부 전반부", "people": ["이원영", "김명수", "신운화", "윤호진", "민수진"], "topics": ["연대 감각의 충격 — 오뒷세이아보다 앞선 이야기", "쐐기문자 해독과 점토판의 세계", "왜 이 지역에는 남은 것이 적은가 — 점토와 석재", "도시와 수호신 — 각 도시가 모신 신들", "필경사와 학교 — 문자를 가진다는 것", "발음과 어휘 — 수메르어 낱말 뜯어보기", "신들의 계보 — 자연에서 문명으로 향하는 층위", "길가메쉬라는 인물 — 폭군, 미성숙, 그리고 엔키두", "현대의 감수성으로 불편했던 지점 — 권력자 중심의 서사", "도판으로 보는 수메르에서 바빌론까지", "서구 중심 역사관과 문화재 반출", "자기 이력을 읊는 관습과 판본 병기 편집", "책에 대한 아쉬움과 보조 자료", "운영 논의 — 강연 기획과 지역 인재 발굴"]}, {"no": 24, "date": "2026.09.06", "k": "su", "book": "『길가메쉬 서사시』", "range": "완독 (23차에 이어 남은 분량 전체)", "people": ["이원영", "김명수", "신운화", "민수진", "윤호진"], "topics": ["초야권 — 4천 년 전에도 부당했던 것", "길가메쉬라는 인물 — 실존의 흔적과 3분의 2의 신", "불완전한 신 — 다신교가 남겨두는 자리", "서사의 힘과 그림자 — 위로와 현혹 사이", "이쉬타르의 청혼 — 권력에 대한 유혹과 한계의 자각", "죽음을 대하는 태도 — 이집트라는 예외", "고유성과 표준화 — 무속과 민요, 그리고 유튜브", "연구 기반의 축소 — 기관 통폐합", "오뒷세이아 — 원전의 밀도와 영화의 해석", "고전이 주는 것 — 정답 없음을 견디는 힘", "운영 논의 — 초청 강연과 도서 구입"]}, {"no": 25, "date": "2026.09.20", "k": "su", "book": "『최초의 여신 인안나』", "range": "완독", "people": ["이원영", "김명수", "신운화", "민수진"], "topics": ["인안나라는 여신 — 사랑, 생명, 확장", "엔키 — 대가를 바라지 않고 주는 힘", "추동의 에너지 — 불완전한 세상에서 하고 싶은 것", "도시를 \"버렸다\" — 주체적인 신과 혼란의 힘", "엔릴과 닌릴 — 신의 조상을 \"강간범\"이라 쓴 이유", "신의 노동을 대신하는 인간", "의례는 왜 사라지지 않는가 — 성혼례에서 무빈소 장례까지", "남길 것과 바꿀 것 — 본질을 가려내는 감각", "메(me) — 손에 쥘 수 있는 권능", "하늘의 배 — 경계를 건너는 방식", "점토판을 읽는다는 것", "가장 오래된 여신이 가장 생생하다", "운영 논의 — 초청 강연 준비, 공간 개선, 도서관 축제"]}, {"no": 26, "date": "2026.10.04", "k": "od", "book": "『오뒷세이아』", "range": "1~2권(텔레마키아 앞부분) 중심", "people": ["이원영", "김명수", "신운화", "민수진", "윤호진"], "topics": ["반복되는 수식어 — 공식구와 구비전승", "호메로스는 몇 명인가 — 저자 문제와 영웅 서사시", "옛 서사시의 문체와 현대 웹소설", "무사 여신 — 영감의 권위와 궁평항 풍어제 작두거리", "신과 인간의 책임 — 아이기스토스, 오레스테스, 아테나와 메티스", "칼립소의 섬과 저승 — 돌아가야 할 삶", "아테나의 변신과 징조 — 신이함은 어떻게 만들어지는가", "2권의 정치 — 페넬로페의 전략, 구혼자들의 몰락, 텔레마코스의 첫걸음", "고전 속 생활과 말의 품격 — 새벽, 잔치, 바람, 그리고 대자보", "운영 논의 — 진도 계획, 해설서 구입, 1주년"]}];
+const CULT = {
+  kr:{name:"한국",full:"한국 신화"}, jp:{name:"일본",full:"일본 신화"}, gr:{name:"그리스",full:"그리스 신화"},
+  no:{name:"북유럽",full:"북유럽 신화"}, su:{name:"수메르",full:"수메르 신화"}, od:{name:"오뒷세이아",full:"다시 그리스"}
+};
+const CVAR = {kr:"--kr",jp:"--jp",gr:"--gr",no:"--no",su:"--su",od:"--gr"};
+const cv = k => `var(${CVAR[k]})`;
+const esc = s => s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+const CHAPTERS = [
+  {k:"kr",span:"1–10차",when:"2025. 10 – 2026. 1",book:"『살아있는 한국 신화』 신동흔",
+   items:["창세가 — 붙어 있던 하늘과 땅을 떼어낸 세계, 백성의 별 직성","당금애기와 마리아, 왜 한국 신화의 아버지는 떠나는가","저승차사와 사십구재, 저승에도 질서가 있다는 위안","바리공주를 세대마다 다르게 읽는 법","시루말과 금덩산, 화성으로 내려온 신화"]},
+  {k:"jp",span:"11–12차",when:"2026. 2",book:"『일본 신화 깊이 읽기』",
+   items:["스사노오와 거타지 설화의 닮은꼴","국인기 — 신라 땅을 끌어왔다는 이야기","삼종신기는 어디에 있으며 어떻게 격투 게임이 되었나"]},
+  {k:"gr",span:"13–15차",when:"2026. 3 – 4",book:"『그리스 신화』 아폴로도로스, 강대진 옮김",
+   items:["『도서관』이라는 제목, 고대의 서가","아테나와 아레스, 왜 늘 아테나가 이기는가","트로이 목마는 지친 사람들의 마음이었다","상사뱀 이야기의 이순신 버전과 신립 버전"]},
+  {k:"no",span:"16–22차",when:"2026. 5 – 8",book:"『북유럽 신화』 1·2·3 안인희",
+   items:["로키, 강림도령, 봉이 김선달 — 트릭스터들","발더의 죽음과 겨우살이, 부활이 없는 세계","뷜룬트와 백조 처녀, 그리고 선녀와 나무꾼","간달프는 오딘이었다"]},
+  {k:"su",span:"23–25차",when:"2026. 8 – 9",book:"『최초의 신화 길가메쉬 서사시』 · 『최초의 여신 인안나』 김산해",
+   items:["오뒷세이아보다 앞선 이야기, 점토판의 세계","3분의 2가 신인 왕과 정답 없음을 견디는 힘","대가를 바라지 않고 주는 신 엔키","가장 오래된 여신이 가장 생생하다"]},
+  {k:"od",span:"26차–",when:"2026. 10 –",book:"『오뒷세이아』 호메로스, 이준석 옮김",
+   items:["반복되는 수식어, 공식구와 구비전승","무사 여신과 궁평항 풍어제의 작두거리"]}
+];
+const THEMES = [
+  {t:"트릭스터",d:"로키, 강림도령, 봉이 김선달, 디오니소스. 질서를 흔드는 자가 왜 늘 이야기를 앞으로 미는가.",r:[7,14,17,18,19,20]},
+  {t:"신화 속 여성",d:"당금애기, 바리, 자청비, 가믄장아기, 헬레네, 지그니, 스카디, 인안나.",r:[2,5,6,15,19,20,24,25]},
+  {t:"죽음과 내세",d:"저승차사와 사십구재, 라그나로크, 이집트와 메소포타미아, 길가메쉬의 불멸 찾기.",r:[3,4,5,18,20,24]},
+  {t:"채록과 문자화",d:"구비문학, 에다, 점토판, 공식구. 말로 전하던 이야기가 글이 될 때 생기는 일.",r:[1,4,11,16,17,22,23,25,26]},
+  {t:"신화가 콘텐츠가 될 때",d:"「신과 함께」, 웹소설, 게임, 영화, 그리고 반지의 제왕.",r:[8,12,13,15,20,22,24,26]},
+  {t:"화성이라는 자리",d:"시루말과 금덩산, 화성재인청과 만년제, 우음도 당제, 궁평항 풍어제.",r:[1,8,18,23,26]},
+  {t:"우리 이야기는 왜 대중화되지 않는가",d:"좋은 이야기가 있는데 왜 널리 읽히지 않는지, 해마다 다른 책 앞에서 같은 질문을 했다.",r:[8,13,15,21]}
+];
+
+// band
+const counts = {}; DATA.forEach(m=>counts[m.k]=(counts[m.k]||0)+1);
+document.getElementById("band").innerHTML = Object.keys(CULT).filter(k=>counts[k]).map(k=>
+  `<div style="flex:${counts[k]};background:${cv(k)}" title="${CULT[k].full} ${counts[k]}회">${counts[k]}<span>&nbsp;· ${CULT[k].name}</span></div>`).join("");
+document.getElementById("chapters").innerHTML = CHAPTERS.map(c=>`
+  <div class="ch" style="--c:${cv(c.k)}">
+    <div class="when"><b>${CULT[c.k].full}</b><span>${c.span} · ${c.when}</span></div>
+    <div class="body"><p class="book">${esc(c.book)}</p><ul>${c.items.map(i=>`<li>${esc(i)}</li>`).join("")}</ul></div>
+  </div>`).join("");
+
+// meetings
+const SHOW = 5;
+let filter = "all";
+try{ const f=localStorage.getItem("sy-filter"); if(f) filter=f; }catch(e){}
+function renderFilters(){
+  const opts=[["all","전체"],...Object.keys(CULT).map(k=>[k,CULT[k].name])];
+  document.getElementById("filters").innerHTML = opts.map(([k,n])=>
+    `<button class="chip" id="f-${k}" data-k="${k}" aria-pressed="${filter===k}" style="--c:${k==="all"?"var(--muted)":cv(k)}">${k==="all"?"":"<i></i>"}${n}</button>`).join("");
+}
+function renderList(){
+  const list = DATA.filter(m=>filter==="all"||m.k===filter);
+  document.getElementById("mlist").innerHTML = list.map(m=>{
+    const ops = t=>/^운영 논의|^모임에 앞서|^마무리하며|^독서 방식 논의/.test(t);
+    const topics = m.topics;
+    const first = topics.slice(0,SHOW), rest = topics.slice(SHOW);
+    return `<li class="m" id="m${m.no}" style="--c:${cv(m.k)}">
+      <div class="no">${m.no}<small>${m.date}</small></div>
+      <div class="mb">
+        <div class="meta"><span class="bk">${esc(m.book)}</span><span>${esc(m.range)}</span></div>
+        <ul class="topics">${first.map(t=>`<li${ops(t)?' class="ops"':''}>${esc(t)}</li>`).join("")}${rest.map(t=>`<li hidden${ops(t)?' class="ops"':''}>${esc(t)}</li>`).join("")}</ul>
+        ${rest.length?`<button class="more" id="more-${m.no}" aria-expanded="false" data-n="${rest.length}">모두 보기 (+${rest.length})</button>`:""}
+        <p class="who">${m.people.length}명 · ${m.people.join(", ")}</p>
+      </div></li>`;}).join("");
+}
+document.getElementById("filters").addEventListener("click",e=>{
+  const b=e.target.closest(".chip"); if(!b) return;
+  filter=b.dataset.k; try{localStorage.setItem("sy-filter",filter)}catch(e){}
+  renderFilters(); renderList();
+});
+document.getElementById("mlist").addEventListener("click",e=>{
+  const b=e.target.closest(".more"); if(!b) return;
+  const open=b.getAttribute("aria-expanded")!=="true";
+  b.closest(".mb").querySelectorAll(".topics li").forEach((li,i)=>{ if(i>=SHOW) li.hidden=!open; });
+  b.setAttribute("aria-expanded",open); b.textContent=open?"접기":`모두 보기 (+${b.dataset.n})`;
+});
+renderFilters(); renderList();
+
+// attendance
+const MEMBERS=["이원영","김명수","신운화","민수진","김숙이","윤호진","곽미애","백미화"];
+const firstSeen={}; DATA.forEach(m=>m.people.forEach(p=>{ if(!(p in firstSeen)) firstSeen[p]=m.no; }));
+let html=`<thead><tr><th class="n" scope="col">회원</th>${DATA.map(m=>`<th scope="col">${m.no}</th>`).join("")}<th scope="col">합</th></tr></thead><tbody>`;
+MEMBERS.forEach(p=>{
+  let n=0;
+  html+=`<tr><th class="n" scope="row">${p}</th>`+DATA.map(m=>{
+    const on=m.people.includes(p); if(on)n++;
+    const cls= on?"":(m.no<firstSeen[p]?"pre":"off");
+    return `<td><span class="dot ${cls}" style="--c:${cv(m.k)}" title="${m.no}차 ${on?"참석":"—"}"></span></td>`;}).join("")+`<td class="t">${n}</td></tr>`;
+});
+document.getElementById("att").innerHTML=html+"</tbody>";
+
+// themes
+document.getElementById("themelist").innerHTML = THEMES.map(t=>`
+  <div class="th"><h3>${esc(t.t)}</h3><div class="runs">${t.r.map(n=>`<a href="#m${n}" data-n="${n}">${n}</a>`).join("")}</div><p>${esc(t.d)}</p></div>`).join("");
+document.getElementById("themelist").addEventListener("click",e=>{
+  const a=e.target.closest("a[data-n]"); if(!a) return;
+  if(filter!=="all"){ filter="all"; renderFilters(); renderList(); }
+});
+</script>
+
+</body>
+</html>
